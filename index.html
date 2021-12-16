@@ -11,8 +11,10 @@
 </head>
 <body>
     <header>
-        <h1 class="header_zepeto_logo">ZEPETO</h1>
-        <nav class="gnb_wrap">
+        <h1 class="header_zepeto_logo">
+            <img src="./img/zepeto_logo.png" alt="zepeto">
+        </h1>
+        <nav class="gnb_wrap open">
             <ul class="gnb_list">
                 <li class="gnb_item">
                     <a href="#" class="text_outline">Virtual Reality</a>
@@ -48,7 +50,11 @@
                 </li>
             </ul>
         </nav>
-        <button type="button" class="js-gnbOpen"><span class="a11y_hidden">Zepeto Menu Open</span></button>
+        <button class="gnb_opener">
+            <span class="gnb_opener_text z">Z</span>
+            <span class="gnb_opener_text close">close</span>
+            <i class="gnb_opener_circle"></i>
+        </button>
     </header>
     <main>
         <section class="intro">

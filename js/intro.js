@@ -2,6 +2,25 @@
 var introWrap = document.querySelector('.intro');
 var btnPlayNow = document.getElementsByClassName('btn_playnow')[0];
 
+var globalInit = function () {
+    InitGnb();
+    NormalMarquee();
+    HoverMarquee();
+}
+
+var InitGnb = function () {
+    var gnbWrap = document.querySelector('.gnb_wrap');
+    var gnbOpener = document.querySelector('.gnb_opener');
+
+    gnbOpener.addEventListener('click', function() {
+        if (gnbWrap.classList.contains('open')) {
+            gnbWrap.classList.remove('open')
+        }
+        else {
+            gnbWrap.classList.add('open');
+        }
+    })
+}
 
 function NormalMarquee() {
     var mqWrap = document.querySelectorAll('.marquee_wrap.normal');
@@ -64,8 +83,6 @@ function NormalMarquee() {
         activer();
     }
 }
-
-NormalMarquee();
 
 function HoverMarquee () {
     var mqWrap = document.querySelectorAll('.marquee_wrap.hover');
@@ -142,11 +159,11 @@ function HoverMarquee () {
     }
 }
 
-HoverMarquee();
-
 btnPlayNow.addEventListener('mouseover', function() {
     introWrap.classList.add('over');
 })
 btnPlayNow.addEventListener('mouseleave', function() {
     introWrap.classList.remove('over');
 })
+
+globalInit();
