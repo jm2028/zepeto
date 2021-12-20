@@ -14,7 +14,7 @@
         <h1 class="header_zepeto_logo">
             <img src="./img/zepeto_logo.png" alt="zepeto">
         </h1>
-        <nav class="gnb_wrap open">
+        <nav class="gnb_wrap">
             <ul class="gnb_list">
                 <li class="gnb_item">
                     <a href="#" class="text_outline">Virtual Reality</a>
@@ -56,19 +56,27 @@
             <i class="gnb_opener_circle"></i>
         </button>
     </header>
-    <main>
-        <section class="intro">
+    <main class="main_wrap">
+        <section class="intro_wrap">
             <h2 class="a11y_hidden">zepeto enter</h2>
+            <button type="button" class="btn_playnow">PLAY NOW</button>
+            <div>
+                <video></video>
+            </div>
             <div class="marquee_wrap normal">
                 <div class="marquee_inner">
                     <span class="marquee_contents">ZEPETOZEPETOZEPETOZEPETO</span>
                 </div>
             </div>
-            <button type="button" class="btn_playnow">PLAY NOW</button>
             <div class="marquee_wrap normal bottom back">
                 <div class="marquee_inner">
                     <span class="marquee_contents">ZEPETOZEPETOZEPETOZEPETO</span>
                 </div>
+            </div>
+        </section>
+        <section class="intro_video_wrap">
+            <div class="intro_video">
+                <video src="./img/intro.mp4" loop="true" muted id="intro_video"></video>
             </div>
         </section>
     </main>

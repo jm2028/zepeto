@@ -1,10 +1,8 @@
 "use strict"
-var introWrap = document.querySelector('.intro');
-var btnPlayNow = document.getElementsByClassName('btn_playnow')[0];
 
 var globalInit = function () {
     InitGnb();
-    NormalMarquee();
+    InitIntro();
     HoverMarquee();
 }
 
@@ -22,7 +20,26 @@ var InitGnb = function () {
     })
 }
 
-function NormalMarquee() {
+var InitIntro = function () {
+    var introWrap = document.querySelector('.intro_wrap');
+    var btnPlayNow = document.getElementsByClassName('btn_playnow')[0];
+    var introVideo = document.getElementById('intro_video');
+
+    btnPlayNow.addEventListener('click', function () {
+        introWrap.classList.add('end');
+        introVideo.play();
+    })
+    btnPlayNow.addEventListener('mouseover', function() {
+        introWrap.classList.add('over');
+    })
+    btnPlayNow.addEventListener('mouseleave', function() {
+        introWrap.classList.remove('over');
+    })
+
+    NormalMarquee(introWrap);
+}
+
+function NormalMarquee(activerEventer) {
     var mqWrap = document.querySelectorAll('.marquee_wrap.normal');
 
     for (var i = 0; i < mqWrap.length; i++) {
@@ -70,7 +87,7 @@ function NormalMarquee() {
             mqInner.style.transform = 'translate3d(' + xPos + 'px, 0, 0)';
             xPos = xPosVal(xPos);
 
-            if (introWrap.classList.contains('over')) {
+            if (activerEventer.classList.contains('over')) {
                 xPos = xPosFast(xPos);
             }
 
@@ -135,10 +152,6 @@ function HoverMarquee () {
             mqInner.style.transform = 'translate3d(' + xPos + 'px, 0, 0)';
             xPos = xPosVal(xPos);
 
-            if (introWrap.classList.contains('over')) {
-                xPos = xPosFast(xPos);
-            }
-
             if (Math.abs(mqContentsWidth) <= Math.abs(xPos)) {
                 xPos = 0;
             }
@@ -158,12 +171,5 @@ function HoverMarquee () {
 
     }
 }
-
-btnPlayNow.addEventListener('mouseover', function() {
-    introWrap.classList.add('over');
-})
-btnPlayNow.addEventListener('mouseleave', function() {
-    introWrap.classList.remove('over');
-})
 
 globalInit();
