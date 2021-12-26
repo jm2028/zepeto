@@ -5,9 +5,9 @@
 body { font-family: 'Rubik', sans-serif; overflow-x: hidden; }
 .nanumSquare { font-family: 'NanumSquare', sans-serif; font-weight: normal; letter-spacing: -1px; }
 html, body, main { height: 100%; }
-button { border: none; cursor: pointer; }
+button { border: none; cursor: pointer; background: none; }
 a { text-decoration: none; }
-img { vertical-align: top; }
+img { vertical-align: top; max-width: 100%; }
 .a11y_hidden { overflow: hidden; position: absolute; clip: rect(0, 0, 0, 0); clip-path: circle(0); width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; }
 
 ::selection { background: #a19df5; }
@@ -19,7 +19,8 @@ img { vertical-align: top; }
 .header_zepeto_logo { position: absolute; top: 20px; left: 50%; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); z-index: 1; }
 .header_zepeto_logo svg { width: 140px; }
 .header_zepeto_logo path,
-.open .header_zepeto_logo path { fill: #5952ff; transition: fill .75s; }
+.header_zepeto_logo.original path,
+.open .header_zepeto_logo path { fill: #5952ff; -webkit-transition: fill .45s ease; transition: fill .45s ease; }
 .gnb_wrap { position: absolute; top: 0; left: 0; width: 100%; height: 100vh; overflow: hidden; background: #fff; -webkit-transform: translate3d(0, -100%, 0); transform: translate3d(0, -100%, 0); -webkit-transition: transform .75s cubic-bezier(.09,.79,.25,1); transition: transform .75s cubic-bezier(.09,.79,.25,1); }
 .open .gnb_wrap { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
 .gnb_list { padding: 70px 0; height: 100%; box-sizing: border-box; }

@@ -43,14 +43,43 @@ var InitIntro = function () {
 var InitReality = function () {
     var grdientWrap = document.querySelector('.gradient_bg');
     var marqueeWrap = grdientWrap.querySelectorAll('.marquee_wrap');
-
-    NormalMarquee(marqueeWrap);
+    var detailContents = document.querySelector('.reality_detail_contents');
+    var headerLogo;
+    var detailOffsetTop = detailContents.offsetTop;
+    var timer;
 
     var realitySwiper = new Swiper('.reality_slider_wrap', {
         slidesPerView: "auto",
         centeredSlides: true,
         loop: true,
         mousewheel: true,
+    });
+
+    var logoColorChanger = function () {
+        detailOffsetTop = detailContents.offsetTop;
+
+        if (detailOffsetTop <= window.scrollY) {
+            headerLogo.classList.add('original');
+        }
+        else {
+            headerLogo.classList.remove('original');
+        }
+    }
+
+    NormalMarquee(marqueeWrap);
+    
+    window.onload = function () {
+        headerLogo = document.querySelector('.header_zepeto_logo');
+        logoColorChanger();
+    }
+    window.addEventListener('scroll', function () {
+        if (!timer) {
+            timer = setTimeout(function () {
+                timer = null;
+
+                logoColorChanger();
+            }, 200);
+        }
     });
 }
 
@@ -191,6 +220,7 @@ function addText (mqInner, marqueeContents, mqWrapW) {
 
 function includeHeader () {
     var headerElementes = document.getElementById('header');
+    console.log(headerElementes.dataset);
     var includePath = headerElementes.dataset.includePath;
     if (includePath) {
         var xhttp = new XMLHttpRequest();
