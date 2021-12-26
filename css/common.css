@@ -28,8 +28,8 @@ img { vertical-align: top; max-width: 100%; }
 .gnb_item .text_outline { color: #fff; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #5952ff; -webkit-transition: -webkit-text-stroke-color .2s; transition: -webkit-text-stroke-color .2s; }
 .gnb_item .marquee_wrap { top: 50%; left: -10%;  width: 120%; height: 100%; font-size: 1.5em; -webkit-transform: translate3d(0, -50%, 0); transform: translate3d(0, -50%, 0) scale3d(1.3, 0, 1); -webkit-transition: transform .2s ease; transition: transform .2s ease; background: #5952ff; }
 .gnb_item .marquee_inner { align-items: center; }
-.gnb_item .marquee_contents { display: flex; align-items: center; letter-spacing: 0; color: transparent; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #fff; }
-.gnb_menu_deco { margin: 0 40px; width: 60px; }
+.gnb_item .marquee_contents { flex: 0 0 auto; display: flex; align-items: center; letter-spacing: 0; color: transparent; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #fff; }
+.gnb_menu_deco { display: block; margin: 0 40px; width: 60px; }
 .gnb_opener { position: fixed; top: 11px; right: 14px; width: 50px; height: 50px; background: none; z-index: 101; }
 .gnb_opener_text { position: absolute; top: 50%; left: 50%; display: block; font-weight: bold; font-size: 27px; color: #fff; -webkit-transform: translate3d(-50%, -50%, 0); transform: translate3d(-50%, -50%, 0); -webkit-transition: transform .2s ease; transition: transform .2s ease; -webkit-transform-origin: top; transform-origin: top; }
 .gnb_opener_text.z { -webkit-transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0); transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0); -webkit-transition-delay: .2s; transition-delay: .2s; }
