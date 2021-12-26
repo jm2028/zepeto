@@ -1,12 +1,11 @@
 @charset "UTF-8";
 
-.main_wrap { position: relative; }
+.header_zepeto_logo path { fill: #5952ff; }
 
 .intro_wrap { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 200; overflow: hidden; }
-/* .intro_wrap.over .marquee_wrap { background: #fff; } */
 .intro_wrap .marquee_wrap { align-items: flex-start; height: 50%; background: #000; -webkit-transition: background-color .4s ease, transform .75s cubic-bezier(.09,.79,.25,1), height .6s cubic-bezier(.38,.01,.58,1); transition: background-color .4s ease, transform .75s cubic-bezier(.09,.79,.25,1) .3s, height .6s cubic-bezier(.38,.01,.58,1); }
 .intro_wrap .marquee_wrap.bottom { align-items: flex-end; }
-.intro_wrap.end { z-index: -10; transition: z-index .75s; }
+.intro_wrap.end { z-index: -10; transition: z-index 0s .5s; }
 .intro_wrap.end .marquee_wrap { height: 0; -webkit-transform: translate3d(0, -100%, 0); transform: translate3d(0, -100%, 0); }
 .intro_wrap.end .marquee_wrap.bottom { -webkit-transform: translate3d(0, 100%, 0); transform: translate3d(0, 100%, 0); }
 .intro_wrap .marquee_wrap .marquee_contents { font-size: 150px; color: #5952ff; font-weight: bold; letter-spacing: 25px; }
