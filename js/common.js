@@ -41,11 +41,9 @@ var InitIntro = function () {
 }
 
 var InitReality = function () {
-    var grdientWrap = document.querySelector('.gradient_bg');
-    var marqueeWrap = grdientWrap.querySelectorAll('.marquee_wrap');
-    var detailContents = document.querySelector('.reality_detail_contents');
-    var headerLogo;
-    var detailOffsetTop = detailContents.offsetTop;
+    var marqueeWrap = document.querySelectorAll('.marquee_wrap');
+    var mainWrap = document.getElementsByClassName('main_wrap')[0];
+    var detailOpener = mainWrap.querySelectorAll('.js-detailOpener');
     var timer;
 
     var realitySwiper = new Swiper('.reality_slider_wrap', {
@@ -55,32 +53,59 @@ var InitReality = function () {
         mousewheel: true,
     });
 
-    var logoColorChanger = function () {
-        detailOffsetTop = detailContents.offsetTop;
+    var realityDetailOpen = function (dataSet, callback) {
+        var detailFile = dataSet;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var newSection = document.createElement('section');
+                mainWrap.append(newSection);
+                newSection.outerHTML = this.responseText;
+                callback(); 
+            }
+        };
+        xhttp.open('GET', detailFile, true);
+        xhttp.send();
+    }
 
-        if (detailOffsetTop <= window.scrollY) {
-            headerLogo.classList.add('original');
+    var realityLoaded = function () {
+        var headerLogo = document.querySelector('.header_zepeto_logo');
+        var detailContents = document.querySelector('.reality_detail_contents');
+        var detailOffsetTop = detailContents.offsetTop;
+
+        var logoColorChanger = function () {
+            detailOffsetTop = detailContents.offsetTop;
+
+            if (detailOffsetTop <= window.scrollY) {
+                headerLogo.classList.add('original');
+            }
+            else {
+                headerLogo.classList.remove('original');
+            }
         }
-        else {
-            headerLogo.classList.remove('original');
+
+        window.onload = function () {
+
         }
+        window.addEventListener('scroll', function () {
+            if (!timer) {
+                timer = setTimeout(function () {
+                    timer = null;
+    
+                    logoColorChanger();
+                }, 200);
+            }
+        });
+    }
+
+    for (var i = 0; i < detailOpener.length; i++) {
+        detailOpener[i].addEventListener('click', function () {
+            var $this = this;
+            realityDetailOpen($this.dataset.detailOpener, realityLoaded);
+        })
     }
 
     NormalMarquee(marqueeWrap);
-    
-    window.onload = function () {
-        headerLogo = document.querySelector('.header_zepeto_logo');
-        logoColorChanger();
-    }
-    window.addEventListener('scroll', function () {
-        if (!timer) {
-            timer = setTimeout(function () {
-                timer = null;
-
-                logoColorChanger();
-            }, 200);
-        }
-    });
 }
 
 function NormalMarquee(marqueeWrap, activerEventer) {
@@ -220,7 +245,6 @@ function addText (mqInner, marqueeContents, mqWrapW) {
 
 function includeHeader () {
     var headerElementes = document.getElementById('header');
-    console.log(headerElementes.dataset);
     var includePath = headerElementes.dataset.includePath;
     if (includePath) {
         var xhttp = new XMLHttpRequest();

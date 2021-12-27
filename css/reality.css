@@ -6,7 +6,7 @@
 .gradient_bg .marquee_wrap { top: 50%; padding: 40px 0; background: #fff; -webkit-transform: translate3d(0, -50%, 0); transform: translate3d(0, -50%, 0); }
 .gradient_bg .marquee_contents { padding-right: 35px; font-size: calc(20px + 4.2vw); font-weight: bold; color: transparent; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #5952ff; box-sizing: border-box; }
 
-.reality_slider_wrap { height: 100%; }
+.reality_slider_wrap { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .reality_slider_inner { display: flex; justify-self: center; align-items: center; max-width: 1020px; padding: 0 8%; }
 .reality_slider_inner .slider_box { display: block; margin: 11.5% auto 0; width: 95%; cursor: pointer; }
 .reality_slider_img { position: relative; border-radius: 20px; overflow: hidden; }
@@ -15,7 +15,7 @@
 .reality_map_user { position: absolute; bottom: 20px; right: 25px; display: flex; align-items: center; color: #fff; letter-spacing: -.25px; opacity: .5; -webkit-transition: opacity .4s ease; transition: opacity .4s ease; }
 .slider_box:hover .reality_map_user { opacity: 1; }
 .reality_map_user .icn_user { margin-right: 10px; }
-.reality_slider_info { display: flex; justify-content: space-between; margin-top: 35px; padding: 0 10px; font-size: 18px; color: #fff; box-sizing: border-box; }
+.reality_slider_info { display: flex; justify-content: space-between; margin-top: 35px; padding: 0 10px; font-size: 18px; color: #fff; box-sizing: border-box; text-align: left; }
 .reality_slider_info .desc_title { font-size: 44px; font-weight: bold; -webkit-filter: drop-shadow(0 0 10px #9332e8); filter: drop-shadow(0 0 10px #9332e8); }
 .reality_slider_info .desc { margin-top: 14px; }
 .reality_slider_info .info_author { display: flex; align-items: center; }
@@ -24,11 +24,16 @@
 
 .reality_detail_visual { display: flex; justify-content: center; align-items: center; }
 .reality_detail_visual img { width: 100%; }
-.reality_detail_contents { display: flex; justify-content: center; padding: 0 3%; background: #fff; box-sizing: border-box; }
-.reality_detail_contents .contents_wrap { width: 100%; max-width: 1200px; padding-top: 150px; }
+
+.reality_detail { position: relative; z-index: 1; animation: detailOpening .8s ease both; }
+@keyframes detailOpening {
+    0% { -webkit-transform: translate3d(0, 100vh, 0); transform: translate3d(0, 100vh, 0);}
+    100% { -webkit-transform: translate3d(0, 0vh, 0); transform: translate3d(0, 0vh, 0); }
+}
+.reality_detail_contents { display: flex; justify-content: center; padding: 150px 3% 140px; background: #fff; box-sizing: border-box; }
+.reality_detail_contents .contents_wrap { width: 100%; max-width: 1200px; }
 .reality_detail_contents .contents_title { font-size: 50px; font-weight: bold; text-align: center; }
 .lotteworld .contents_title { color: rgba(220, 54, 59, .2); }
-
 .reality_detail_contents .contents_top { margin-top: 55px; }
 .reality_detail_contents .triple_wrap { display: flex; justify-content: space-between; }
 .reality_detail_contents .triple_image { border-radius: 20px; overflow: hidden; }
@@ -36,15 +41,12 @@
 .reality_detail_contents .triple_image + .triple_image { margin-left: 2%; }
 .reality_detail_contents .triple_image:nth-child(1),
 .reality_detail_contents .triple_image:nth-child(3) { margin-top: 8.5%; }
-
 .reality_detail_contents .contents_info { text-align: center; }
 .lotteworld .contents_info { -webkit-transform: translate3d(0, -10px, 0); transform: translate3d(0, -10px, 0); }
 .reality_detail_contents .contents_info_subject { font-size: 32px; font-weight: bold; line-height: 1.25; }
 .reality_detail_contents .contents_info_desc { margin-top: 22px; font-size: 18px; line-height: 1.5; }
-
 .reality_detail_contents .contents_mid { margin-top: 130px; }
 .reality_detail_contents .big_image_wrap { border-radius: 20px; overflow: hidden; }
-
 .reality_detail_contents .contents_bottom { margin-top: 200px; }
 .reality_detail_contents .bottom_img_box { position: relative; display: flex; justify-content: space-between; }
 .reality_detail_contents .bottom_img_box + .bottom_img_box { margin-top: 90px; }
@@ -59,7 +61,38 @@
 .reality_detail_contents .bottom_box_txt + .bottom_bg_txt { right: 0; }
 .reality_detail_contents .bottom_box_thumb + .bottom_bg_txt { left: 4%; }
 
-.reality_detail_marquee { position: relative; }
+.reality_detail_dress { display: flex; justify-content: center; padding: 150px 3% 140px; box-sizing: border-box; background: #fb8114; }
+.reality_detail_dress .dress_inner { display: flex; justify-content: space-between; width: 100%; max-width: 1200px; }
+.reality_detail_dress .dress_big_thumb { flex: 0 0 auto; width: 450px; height: 665px; margin-right: 50px; }
+.reality_detail_dress .dress_big_box { display: flex; justify-content: center; align-items: flex-end; height: 620px; border-radius: 20px; background-color: #e0bbaa; }
+.reality_detail_dress .dress_title { font-size: 60px; font-weight: bold; color: #fff; }
+.reality_detail_dress .dress_title .fontregular { font-weight: normal; }
+.reality_detail_dress .dress_desc { margin-top: 10px; font-size: 20px; color: #fff; line-height: 1.7; }
+.reality_detail_dress .dress_right_box { display: flex; flex-direction: column; justify-content: space-between; flex: 0 1 100%; height: 665px; padding-top: 20px; box-sizing: border-box; }
+.reality_detail_dress .dress_small_wrap { display: flex; justify-content: space-between; }
+.reality_detail_dress .dress_small_thumb { display: flex; flex-direction: column; justify-content: space-between; }
+.reality_detail_dress .dress_small_thumb + .dress_small_thumb { margin-left: 10px; }
+.reality_detail_dress .dress_small_box { display: flex; justify-content: center; align-items: center; width: 220px; height: 330px; border-radius: 20px; }
+.reality_detail_dress .dress_small_box.blue { background-color: #9cc0ff; }
+.reality_detail_dress .dress_small_box.green { background-color: #b4d3b0; }
+.reality_detail_dress .dress_small_box.pink { background-color: #ff9797; }
+.reality_detail_dress .dress_item_desc { display: flex; justify-content: space-between; align-items: center; margin-top: 25px; color: #fff; }
+.reality_detail_dress .dress_item_name { font-size: 18px; font-weight: bold; }
+.reality_detail_dress .dress_item_price { display: flex; align-items: center; font-size: 20px; }
+.reality_detail_dress .dress_item_price .icn_coin { margin-right: 12px; }
+
+.reality_detail_equipment { display: flex; justify-content: center; padding: 150px 3% 140px; box-sizing: border-box; }
+.reality_detail_equipment .equipment_inner { display: flex; width: 100%; max-width: 1200px; }
+.reality_detail_equipment .equipment_item { flex: 0 0 25%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.reality_detail_equipment .equipment_thumb { flex: 0 1 100%; display: flex; justify-content: center; align-items: center; width: 100%; }
+.reality_detail_equipment .equipment_item_desc { flex: 0 0 auto; display: flex; justify-content: space-between; align-items: center; margin-top: 50px; }
+.reality_detail_equipment .equipment_item_name { font-size: 18px; font-weight: bold; }
+.reality_detail_equipment .equipment_item_price { display: flex; align-items: center; margin-left: 30px; font-size: 20px; }
+.reality_detail_equipment .equipment_item_price .icn_coin { margin-right: 12px; }
+
+.reality_detail_marquee { position: relative; padding: 25px 0; background: #5952ff; box-sizing: border-box; }
+.reality_detail_marquee .marquee_inner { font-size: 50px; color: #fff; font-weight: bold; }
+.reality_detail_marquee .marquee_contents { padding: 0 10px; }
 
 @keyframes gredientBg {
     0% { background-position: 0% 50%; }
