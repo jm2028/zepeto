@@ -36,18 +36,28 @@
 .reality_detail_contents .contents_wrap { width: 100%; max-width: 1200px; }
 .reality_detail_contents .contents_title { font-size: 50px; font-weight: bold; text-align: center; }
 .lotteworld .contents_title { color: rgba(220, 54, 59, .2); }
+.guccivilla .contents_title { color: rgba(150, 88, 65, .2); }
+.hangang .contents_title { color: rgba(0, 131, 255, .2); }
 .reality_detail_contents .contents_top { margin-top: 55px; }
 .reality_detail_contents .triple_wrap { display: flex; justify-content: space-between; }
+.guccivilla .triple_wrap { margin-top: 62px; }
 .reality_detail_contents .triple_image { border-radius: 20px; overflow: hidden; }
 .reality_detail_contents .triple_image img { border-radius: 20px; }
 .reality_detail_contents .triple_image + .triple_image { margin-left: 2%; }
 .reality_detail_contents .triple_image:nth-child(1),
 .reality_detail_contents .triple_image:nth-child(3) { margin-top: 8.5%; }
+.guccivilla .triple_image:nth-child(1),
+.guccivilla .triple_image:nth-child(3) { margin-top: 0; }
+.reality_detail_contents .double_wrap { display: flex; justify-content: space-between; align-items: flex-start; }
+.reality_detail_contents .double_image img { border-radius: 20px; }
+.reality_detail_contents .double_image .contents_info { margin-top: 110px; padding-left: 23px; text-align: left; }
 .reality_detail_contents .contents_info { text-align: center; }
 .lotteworld .contents_info { -webkit-transform: translate3d(0, -10px, 0); transform: translate3d(0, -10px, 0); }
 .reality_detail_contents .contents_info_subject { font-size: 32px; font-weight: bold; line-height: 1.25; }
+.guccivilla .contents_info_subject { font-size: 44px; }
 .reality_detail_contents .contents_info_desc { margin-top: 20px; font-size: 18px; line-height: 1.5; }
 .reality_detail_contents .contents_mid { margin-top: 140px; }
+.guccivilla .contents_mid { margin-top: 175px; }
 .reality_detail_contents .big_image_wrap { border-radius: 20px; overflow: hidden; }
 .reality_detail_contents .contents_bottom { margin-top: 200px; }
 .reality_detail_contents .bottom_img_box { position: relative; display: flex; justify-content: space-between; }
@@ -61,11 +71,15 @@
 .reality_detail_contents .bottom_box_desc { margin-top: 25px; font-size: 18px; }
 .reality_detail_contents .bottom_bg_txt { position: absolute; bottom: 60px; font-size: 140px; font-weight: bold; color: rgba(89,82,255, .1); }
 .reality_detail_contents .bottom_box_txt + .bottom_bg_txt { right: 0; }
+.guccivilla .bottom_box_txt + .bottom_bg_txt { left: 480px; right: auto; }
 .reality_detail_contents .bottom_box_thumb + .bottom_bg_txt { left: 4%; }
+.guccivilla .bottom_box_thumb + .bottom_bg_txt { left: 170px; }
 .reality_detail_dress { display: flex; justify-content: center; padding: 150px 3% 140px; box-sizing: border-box; background: #fb8114; }
+.guccivilla .reality_detail_dress { background: #685033; }
 .reality_detail_dress .dress_inner { display: flex; justify-content: space-between; width: 100%; max-width: 1200px; }
 .reality_detail_dress .dress_big_thumb { flex: 0 0 auto; width: 450px; height: 665px; margin-right: 50px; }
-.reality_detail_dress .dress_big_box { display: flex; justify-content: center; align-items: flex-end; padding-left: 11%; height: 620px; border-radius: 20px; background-color: #e0bbaa; }
+.reality_detail_dress .dress_big_box { display: flex; justify-content: center; align-items: flex-end; padding-left: 11%; height: 620px; border-radius: 20px; background-color: #e0bbaa; box-sizing: border-box; overflow: hidden; }
+.guccivilla .dress_big_box img { -webkit-transform: translate3d(0, 145px, 0); transform: translate3d(0, 145px, 0); }
 .reality_detail_dress .dress_title { font-size: 60px; font-weight: bold; color: #fff; }
 .reality_detail_dress .dress_title .fontregular { font-weight: normal; }
 .reality_detail_dress .dress_desc { margin-top: 13px; font-size: 20px; color: #fff; line-height: 1.7; }
@@ -75,6 +89,7 @@
 .reality_detail_dress .dress_small_thumb + .dress_small_thumb { margin-left: 10px; }
 .reality_detail_dress .dress_small_box { display: flex; justify-content: center; align-items: center; width: 220px; height: 330px; border-radius: 20px; }
 .reality_detail_dress .dress_small_box.blue { background-color: #9cc0ff; }
+.guccivilla .dress_small_box.blue img { -webkit-transform: translate3d(0, 12px, 0); transform: translate3d(0, 12px, 0); }
 .reality_detail_dress .dress_small_box.green { background-color: #b4d3b0; }
 .reality_detail_dress .dress_small_box.pink { background-color: #ffa2a2; }
 .reality_detail_dress .dress_item_desc { display: flex; justify-content: space-between; align-items: center; margin-top: 25px; padding: 0 8px; color: #fff; }
@@ -85,10 +100,19 @@
 .reality_detail_equipment .equipment_inner { display: flex; width: 100%; max-width: 1200px; }
 .reality_detail_equipment .equipment_item { flex: 0 0 25%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .reality_detail_equipment .equipment_thumb { flex: 0 1 100%; display: flex; justify-content: center; align-items: center; width: 100%; }
+.guccivilla .equipment_thumb { align-items: flex-end; }
 .reality_detail_equipment .equipment_item_desc { flex: 0 0 auto; display: flex; justify-content: space-between; align-items: center; margin-top: 50px; }
 .reality_detail_equipment .equipment_item_name { font-size: 18px; font-weight: bold; }
 .reality_detail_equipment .equipment_item_price { display: flex; align-items: center; margin-left: 30px; font-size: 20px; }
 .reality_detail_equipment .equipment_item_price .icn_coin { margin-right: 12px; }
+.reality_detail_itemslider { height: 100vh; min-height: 850px; max-height: 978px; background: #aace37; }
+.reality_detail_itemslider .detail_item_subject { padding-top: 175px; padding-left: 126px; margin-bottom: 143px; }
+.reality_detail_itemslider .detail_item_subject .item_title { margin-top: 20px; font-size: 60px; color: #652d8d; font-weight: bold; }
+.reality_detail_itemslider .detail_item_subject .item_desc { font-size: 20px; color: #652d8d; font-weight: normal; }
+.reality_detail_itemslider .item_slider_box { display: flex; justify-content: center; align-items: center; width: 314px; height: 418px; background: #fff; border-radius: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, .1); -webkit-transform: translate3d(0, -35px, 0); transform: translate3d(0, -35px, 0); -webkit-transition: transform .2s; transition: transform .2s; }
+.reality_detail_itemslider .item_slider_box.swiper-slide-prev,
+.reality_detail_itemslider .item_slider_box.swiper-slide-next { -webkit-transform: translate3d(0, 35px, 0); transform: translate3d(0, 35px, 0); }
+
 .reality_detail_marquee { position: relative; padding: 25px 0; background: #5952ff; box-sizing: border-box; }
 .reality_detail_marquee .marquee_inner { font-size: 50px; color: #fff; font-weight: bold; }
 .reality_detail_marquee .marquee_contents { padding: 0 10px; }

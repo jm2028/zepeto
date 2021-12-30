@@ -107,17 +107,7 @@ var InitReality = function () {
             }
         }
 
-        realityMainWrap.classList.add('opend');
-
-        closeBtn.addEventListener('click', function () {
-            realityMainWrap.classList.remove('opend');
-            setTimeout(function () {
-                detailWrap.remove();
-                openerCtrl = true;
-            }, transitionTime);
-        })
-
-        realityMainWrap.addEventListener('scroll', function () {
+        var scrollEvent = function () {
             if (!timer) {
                 timer = setTimeout(function () {
                     timer = null;
@@ -125,7 +115,35 @@ var InitReality = function () {
                     logoColorChanger();
                 }, delay);
             }
+        }
+
+        var closeDetail = function () {
+            realityMainWrap.classList.remove('opend');
+            setTimeout(function () {
+                realityMainWrap.removeEventListener('scroll', scrollEvent);
+                closeBtn.removeEventListener('click', closeDetail);
+                detailWrap.remove();
+                openerCtrl = true;
+            }, transitionTime);
+        }
+
+        var detailItemSwiper = new Swiper('.detail_itemslider_wrap', {
+            slidesPerView: "5",
+            centeredSlides: true,
+            loop: true,
+            spaceBetween: 60,
+            on: {
+                init: function () {
+                    console.log('')
+                }
+            }
         });
+
+        realityMainWrap.classList.add('opend');
+
+        realityMainWrap.addEventListener('scroll', scrollEvent);
+
+        closeBtn.addEventListener('click', closeDetail);
 
         NormalMarquee(detailMarquee);
     }
