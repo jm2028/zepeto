@@ -41,9 +41,12 @@ var InitIntro = function () {
 }
 
 var InitReality = function () {
+    var realityMainWrap = document.getElementsByClassName('reality_main')[0];
     var marqueeWrap = document.querySelectorAll('.marquee_wrap');
-    var mainWrap = document.getElementsByClassName('main_wrap')[0];
-    var detailOpener = mainWrap.querySelectorAll('.js-detailOpener');
+    var detailOpener = realityMainWrap.querySelectorAll('.js-detailOpener');
+    var openerCtrl = true;
+    var transitionTime = 1000;
+    var delay = 200;
     var timer;
 
     var realitySwiper = new Swiper('.reality_slider_wrap', {
@@ -53,15 +56,15 @@ var InitReality = function () {
         mousewheel: true,
     });
 
-    var realityDetailOpen = function (dataSet, callback) {
+    var realityDetailOpen = function (dataSet, loadedCallback) {
         var detailFile = dataSet;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var newSection = document.createElement('section');
-                mainWrap.append(newSection);
+                realityMainWrap.append(newSection);
                 newSection.outerHTML = this.responseText;
-                callback(); 
+                loadedCallback(); 
             }
         };
         xhttp.open('GET', detailFile, true);
@@ -69,37 +72,70 @@ var InitReality = function () {
     }
 
     var realityLoaded = function () {
+        var detailWrap = document.querySelector('.reality_detail');
+        var detailMarquee = detailWrap.querySelectorAll('.marquee_wrap');
+        var allImg = detailWrap.querySelectorAll('img');
+        var allImgLength = allImg.length
+        var imgLoadChecker = 0;
+
+        for (var i = 0; i < allImgLength; i++) {
+            allImg[i].onload = function () {
+                imgLoadChecker++;
+
+                if (imgLoadChecker == allImgLength) {
+                    console.log('loaded');
+                }
+            }
+        }
+
+
         var headerLogo = document.querySelector('.header_zepeto_logo');
-        var detailContents = document.querySelector('.reality_detail_contents');
+        var detailContents = detailWrap.querySelector('.reality_detail_contents');
         var detailOffsetTop = detailContents.offsetTop;
+        var closeBtn = detailWrap.querySelector('.detail_btn_close');
 
         var logoColorChanger = function () {
             detailOffsetTop = detailContents.offsetTop;
 
-            if (detailOffsetTop <= window.scrollY) {
+            if (detailOffsetTop <= realityMainWrap.scrollTop) {
+                closeBtn.classList.add('reverse');
                 headerLogo.classList.add('original');
             }
             else {
+                closeBtn.classList.remove('reverse');
                 headerLogo.classList.remove('original');
             }
         }
 
-        window.onload = function () {
+        realityMainWrap.classList.add('opend');
 
-        }
-        window.addEventListener('scroll', function () {
+        closeBtn.addEventListener('click', function () {
+            realityMainWrap.classList.remove('opend');
+            setTimeout(function () {
+                detailWrap.remove();
+                openerCtrl = true;
+            }, transitionTime);
+        })
+
+        realityMainWrap.addEventListener('scroll', function () {
             if (!timer) {
                 timer = setTimeout(function () {
                     timer = null;
     
                     logoColorChanger();
-                }, 200);
+                }, delay);
             }
         });
+
+        NormalMarquee(detailMarquee);
     }
 
     for (var i = 0; i < detailOpener.length; i++) {
         detailOpener[i].addEventListener('click', function () {
+            if (openerCtrl == false) {
+                return;
+            }
+            openerCtrl = false;
             var $this = this;
             realityDetailOpen($this.dataset.detailOpener, realityLoaded);
         })

@@ -3,10 +3,14 @@
 @import url('https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css');
 
 body { font-family: 'Rubik', sans-serif; overflow-y: overlay; overflow-x: hidden; }
-body::-webkit-scrollbar { width: 7px; background: transparent; }
-body::-webkit-scrollbar-thumb { border-radius: 10px; background: #9556ff; }
-body::-webkit-scrollbar-button { height: 5px; background: transparent; }
-.nanumSquare { font-family: 'NanumSquare', sans-serif; font-weight: normal; letter-spacing: -1px; }
+.main_wrap { overflow-y: overlay; }
+body::-webkit-scrollbar,
+.main_wrap::-webkit-scrollbar { width: 7px; background: transparent; }
+body::-webkit-scrollbar-thumb,
+.main_wrap::-webkit-scrollbar-thumb { border-radius: 10px; background: #5952ff; }
+body::-webkit-scrollbar-button,
+.main_wrap::-webkit-scrollbar-button { height: 5px; background: transparent; }
+.nanumSquare { font-family: 'NanumSquare', sans-serif; font-weight: normal; letter-spacing: -0.5px; }
 html, body, main { height: 100%; }
 button { border: none; cursor: pointer; background: none; font-family: 'Rubik', sans-serif; }
 a { text-decoration: none; }
@@ -20,7 +24,7 @@ img { vertical-align: top; max-width: 100%; }
 .icn_coin { display: inline-block; width: 20px; height: 20px; background: url('../img/icn_coin.png') no-repeat center / contain; }
 
 .header_wrap { position: fixed; width: 100%; z-index: 101; }
-.header_zepeto_logo { position: absolute; top: 20px; left: 50%; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); z-index: 1; }
+.header_zepeto_logo { position: absolute; top: 30px; left: 50%; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); z-index: 1; }
 .header_zepeto_logo svg { width: 140px; }
 .header_zepeto_logo path,
 .header_zepeto_logo.original path,
@@ -34,13 +38,13 @@ img { vertical-align: top; max-width: 100%; }
 .gnb_item .marquee_inner { align-items: center; }
 .gnb_item .marquee_contents { flex: 0 0 auto; display: flex; align-items: center; letter-spacing: 0; color: transparent; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #fff; }
 .gnb_menu_deco { display: block; margin: 0 40px; width: 60px; }
-.gnb_opener { position: fixed; top: 11px; right: 14px; width: 50px; height: 50px; background: none; z-index: 101; }
+.gnb_opener { position: fixed; top: 19px; right: 25px; width: 50px; height: 50px; background: none; z-index: 101; }
 .gnb_opener_text { position: absolute; top: 50%; left: 50%; display: block; font-weight: bold; font-size: 27px; color: #fff; -webkit-transform: translate3d(-50%, -50%, 0); transform: translate3d(-50%, -50%, 0); -webkit-transition: transform .2s ease; transition: transform .2s ease; -webkit-transform-origin: top; transform-origin: top; }
 .gnb_opener_text.z { -webkit-transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0); transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0); -webkit-transition-delay: .2s; transition-delay: .2s; }
 .gnb_opener_text.close { -webkit-transform: scale3d(1, 0, 1) translate3d(-50%, -50%, 0); transform: scale3d(1, 0, 1) translate3d(-50%, -50%, 0); }
 .open .gnb_wrap ~ .gnb_opener .close { -webkit-transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0); transform:  scale3d(1, 1, 1) translate3d(-50%, -50%, 0); -webkit-transition-delay: .2s; transition-delay: .2s; }
 .open .gnb_wrap ~ .gnb_opener .z { -webkit-transform: scale3d(1, 0, 1) translate3d(-50%, -50%, 0); transform: scale3d(1, 0, 1) translate3d(-50%, -50%, 0); -webkit-transition-delay: 0s; transition-delay: 0s; }
-.gnb_opener_circle { position: absolute; top: 48%; left: 50%; display: inline-block; width: 44px; height: 62px; border-radius: 50%; -webkit-transform: translate3d(-50%, -50%, 0) rotate(-50deg); transform: translate3d(-50%, -50%, 0) rotate(-50deg); transition: transform .2s ease, width .2s ease, height .2s ease; background: #5952ff; z-index: -1; }
+.gnb_opener_circle { position: absolute; top: 48%; left: 50%; display: inline-block; width: 44px; height: 62px; border-radius: 50%; -webkit-transform: translate3d(-50%, -50%, 0) rotate(-50deg); transform: translate3d(-50%, -50%, 0) rotate(-50deg); transition: transform .2s ease, width .2s ease, height .2s ease; background: #9556ff; z-index: -1; }
 .gnb_opener:hover .gnb_opener_circle { width: 60px; height: 60px; transform: rotate(0) translate3d(-50%, -50%, 0); }
 
 .marquee_wrap { position: absolute; top: 0; right: 0; width: 100%; display: flex; justify-content: flex-end; align-items: center; white-space: nowrap; overflow: hidden; }
