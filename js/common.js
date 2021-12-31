@@ -44,12 +44,13 @@ var InitReality = function () {
     var realityMainWrap = document.getElementsByClassName('reality_main')[0];
     var marqueeWrap = document.querySelectorAll('.marquee_wrap');
     var detailOpener = realityMainWrap.querySelectorAll('.js-detailOpener');
+    var realitySliderWrap = document.getElementsByClassName('reality_slider_wrap')[0];
     var openerCtrl = true;
     var transitionTime = 1000;
     var delay = 200;
     var timer;
 
-    var realitySwiper = new Swiper('.reality_slider_wrap', {
+    var realitySwiper = new Swiper(realitySliderWrap, {
         slidesPerView: "auto",
         centeredSlides: true,
         loop: true,
@@ -312,5 +313,16 @@ function includeHeader () {
         xhttp.send();
     }
 }
+
+HTMLElement.prototype.hasClass = function (cls) {
+    var i;
+    var classes = this.className.split(" ");
+    for(i = 0; i < classes.length; i++) {
+        if(classes[i] == cls) {
+            return true;
+        }
+    }
+    return false;
+};
 
 globalInit();

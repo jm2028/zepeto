@@ -37,6 +37,7 @@
 .reality_detail_contents .contents_title { font-size: 50px; font-weight: bold; text-align: center; }
 .lotteworld .contents_title { color: rgba(220, 54, 59, .2); }
 .guccivilla .contents_title { color: rgba(150, 88, 65, .2); }
+.fourseasons .contents_title { color: rgba(19, 35, 93, .2); }
 .hangang .contents_title { color: rgba(0, 131, 255, .2); }
 .reality_detail_contents .contents_top { margin-top: 55px; }
 .reality_detail_contents .triple_wrap { display: flex; justify-content: space-between; }
@@ -46,6 +47,9 @@
 .reality_detail_contents .triple_image + .triple_image { margin-left: 2%; }
 .reality_detail_contents .triple_image:nth-child(1),
 .reality_detail_contents .triple_image:nth-child(3) { margin-top: 8.5%; }
+.fourseasons .triple_image:nth-child(1), 
+.fourseasons .triple_image:nth-child(3) { margin-top: 0; }
+.fourseasons .triple_image:nth-child(2) { margin-top: 8.5%; }
 .guccivilla .triple_image:nth-child(1),
 .guccivilla .triple_image:nth-child(3) { margin-top: 0; }
 .reality_detail_contents .double_wrap { display: flex; justify-content: space-between; align-items: flex-start; }
@@ -53,8 +57,11 @@
 .reality_detail_contents .double_image .contents_info { margin-top: 110px; padding-left: 23px; text-align: left; }
 .reality_detail_contents .contents_info { text-align: center; }
 .lotteworld .contents_info { -webkit-transform: translate3d(0, -10px, 0); transform: translate3d(0, -10px, 0); }
+.fourseasons .contents_info { margin-top: 160px; }
+.fourseasons .contents_info + .double_wrap { margin-top: 78px; }
 .reality_detail_contents .contents_info_subject { font-size: 32px; font-weight: bold; line-height: 1.25; }
 .guccivilla .contents_info_subject { font-size: 44px; }
+.fourseasons .contents_info_subject { font-size: 44px; color: #13235d; }
 .reality_detail_contents .contents_info_desc { margin-top: 20px; font-size: 18px; line-height: 1.5; }
 .reality_detail_contents .contents_mid { margin-top: 140px; }
 .guccivilla .contents_mid { margin-top: 175px; }
@@ -105,13 +112,15 @@
 .reality_detail_equipment .equipment_item_name { font-size: 18px; font-weight: bold; }
 .reality_detail_equipment .equipment_item_price { display: flex; align-items: center; margin-left: 30px; font-size: 20px; }
 .reality_detail_equipment .equipment_item_price .icn_coin { margin-right: 12px; }
-.reality_detail_itemslider { height: 100vh; min-height: 850px; max-height: 978px; background: #aace37; }
+.reality_detail_itemslider { height: 100vh; min-height: 850px; max-height: 978px; padding-bottom: 145px; background: #aace37; }
+.fourseasons .reality_detail_itemslider { background: #13235d; }
 .reality_detail_itemslider .detail_item_subject { padding-top: 175px; padding-left: 126px; margin-bottom: 143px; }
-.reality_detail_itemslider .detail_item_subject .item_title { margin-top: 20px; font-size: 60px; color: #652d8d; font-weight: bold; }
-.reality_detail_itemslider .detail_item_subject .item_desc { font-size: 20px; color: #652d8d; font-weight: normal; }
+.reality_detail_itemslider .detail_item_subject .item_title { font-size: 60px; color: #652d8d; font-weight: bold; }
+.reality_detail_itemslider .detail_item_subject .item_desc { margin-top: 20px; font-size: 20px; color: #652d8d; font-weight: normal; }
+.fourseasons .detail_item_subject .item_title,
+.fourseasons .detail_item_subject .item_desc { color: #fff; }
 .reality_detail_itemslider .item_slider_box { display: flex; justify-content: center; align-items: center; width: 314px; height: 418px; background: #fff; border-radius: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, .1); -webkit-transform: translate3d(0, -35px, 0); transform: translate3d(0, -35px, 0); -webkit-transition: transform .2s; transition: transform .2s; }
-.reality_detail_itemslider .item_slider_box.swiper-slide-prev,
-.reality_detail_itemslider .item_slider_box.swiper-slide-next { -webkit-transform: translate3d(0, 35px, 0); transform: translate3d(0, 35px, 0); }
+.reality_detail_itemslider .item_slider_box:nth-child(2n - 1) { -webkit-transform: translate3d(0, 35px, 0); transform: translate3d(0, 35px, 0); }
 
 .reality_detail_marquee { position: relative; padding: 25px 0; background: #5952ff; box-sizing: border-box; }
 .reality_detail_marquee .marquee_inner { font-size: 50px; color: #fff; font-weight: bold; }
