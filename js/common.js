@@ -148,7 +148,13 @@ var InitReality = function () {
     }
 
     realitySliderWrap.addEventListener('click', function (e) {
-        realityDetailOpen(eventPath(e, this), realityLoaded);
+        var detailDataSet = eventPath(e, this);
+
+        if (detailDataSet === false) {
+            return;
+        }
+        
+        realityDetailOpen(detailDataSet, realityLoaded);
     });
 
     NormalMarquee(marqueeWrap);
