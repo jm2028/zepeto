@@ -58,6 +58,9 @@ var InitReality = function () {
     });
 
     var realityDetailOpen = function (dataSet, loadedCallback) {
+        if (false === dataSet) {
+            return false;
+        }
         var detailFile = dataSet;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
@@ -133,11 +136,6 @@ var InitReality = function () {
             centeredSlides: true,
             loop: true,
             spaceBetween: 60,
-            on: {
-                init: function () {
-                    console.log('')
-                }
-            }
         });
 
         realityMainWrap.classList.add('opend');
@@ -149,16 +147,9 @@ var InitReality = function () {
         NormalMarquee(detailMarquee);
     }
 
-    for (var i = 0; i < detailOpener.length; i++) {
-        detailOpener[i].addEventListener('click', function () {
-            if (openerCtrl == false) {
-                return;
-            }
-            openerCtrl = false;
-            var $this = this;
-            realityDetailOpen($this.dataset.detailOpener, realityLoaded);
-        })
-    }
+    realitySliderWrap.addEventListener('click', function (e) {
+        realityDetailOpen(eventPath(e, this), realityLoaded);
+    });
 
     NormalMarquee(marqueeWrap);
 }
@@ -312,6 +303,31 @@ function includeHeader () {
         xhttp.open('GET', includePath, true);
         xhttp.send();
     }
+}
+
+function eventPath(evt, listner) {
+    var target = evt.target;
+    var eventListener = listner;
+
+    if (target === window) {
+        return false;
+    }
+
+    function findData(node) {
+        var parentNode = node.parentNode;
+
+        if (parentNode.hasClass('js-detailOpener')) {
+            return parentNode.dataset.detailOpener;
+        }
+        else if (parentNode == eventListener) {
+            return false;
+        }
+        else {
+            return findData(parentNode);
+        }
+    }
+
+    return findData(target);
 }
 
 HTMLElement.prototype.hasClass = function (cls) {
