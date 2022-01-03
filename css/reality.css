@@ -69,7 +69,7 @@
 .reality_detail_contents .contents_bottom { margin-top: 200px; }
 .reality_detail_contents .bottom_img_box { position: relative; display: flex; justify-content: space-between; }
 .reality_detail_contents .bottom_img_box + .bottom_img_box { margin-top: 90px; }
-.reality_detail_contents .bottom_box_thumb { display: flex; flex: 0 0 50%; }
+.reality_detail_contents .bottom_box_thumb { position: relative; display: flex; flex: 0 0 50%; z-index: 1; }
 .reality_detail_contents .bottom_box_txt + .bottom_box_thumb { justify-content: flex-end; }
 .reality_detail_contents .bottom_box_thumb img { border-radius: 20px; }
 .reality_detail_contents .bottom_box_txt { flex: 0 0 50%; margin-top: 13%; padding-left: 4%; box-sizing: border-box; }

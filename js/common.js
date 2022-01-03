@@ -160,6 +160,34 @@ var InitReality = function () {
     NormalMarquee(marqueeWrap);
 }
 
+var initFeatured = function () {
+    var $followWrap = document.getElementsByClassName('js-followWrap')[0];
+    var $followCard = $followWrap.getElementsByClassName('js-followCard');
+    var $followWrapWidth = $followWrap.offsetWidth / 2;
+    var $followWrapHeight = $followWrap.offsetHeight / 2;
+    var xPos;
+    var yPos;
+    var timer;
+    var delay = 30;
+
+    window.addEventListener('mousemove', function (e) {
+        if (!timer) {
+            timer = setTimeout(function () {
+                timer = null;
+                xPos = ($followWrapWidth - e.clientX) * - 0.08;
+                yPos = ($followWrapHeight - e.clientY) * - 0.08;
+                for (var i = 0; i < $followCard.length; i++) {
+                    movingTarget($followCard[i], xPos, yPos);
+                }
+            }, delay);
+        }
+    })
+
+    function movingTarget (target, xpos, ypos) {
+        target.style.transform = 'translate3d(' + xpos + 'px, ' + ypos + 'px, 0)';
+    }
+}
+
 function NormalMarquee(marqueeWrap, activerEventer) {
     var mqWrap = marqueeWrap;
 
