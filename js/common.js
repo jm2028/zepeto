@@ -160,6 +160,16 @@ var InitReality = function () {
     NormalMarquee(marqueeWrap);
 }
 
+var initPlay = function () {
+    var playNavSlider = new Swiper('.play_nav_slider', {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        freeMode: {
+            sticky: true,
+        }
+    });
+}
+
 var initFeatured = function () {
     var $followWrap = document.getElementsByClassName('js-followWrap')[0];
     var $followCard = $followWrap.getElementsByClassName('js-followCard');
@@ -174,8 +184,8 @@ var initFeatured = function () {
         if (!timer) {
             timer = setTimeout(function () {
                 timer = null;
-                xPos = ($followWrapWidth - e.clientX) * - 0.08;
-                yPos = ($followWrapHeight - e.clientY) * - 0.08;
+                xPos = ($followWrapWidth - e.clientX) * - 0.1;
+                yPos = ($followWrapHeight - e.clientY) * - 0.1;
                 for (var i = 0; i < $followCard.length; i++) {
                     movingTarget($followCard[i], xPos, yPos);
                 }
