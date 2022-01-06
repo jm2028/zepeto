@@ -168,6 +168,31 @@ var initPlay = function () {
             sticky: true,
         }
     });
+
+    var thumbChanger = function () {
+        var thumbChangerBtn = document.getElementsByClassName('nav_slider_box');
+
+        for (var i = 0; i < thumbChangerBtn.length; i++) {
+            thumbChangerBtn[i].addEventListener('click', function () {
+                var categoryData =  this.dataset.item;
+                var beforeThumb = document.querySelectorAll('.activeThumb');
+                var thisThumb = document.querySelectorAll('.' + categoryData);
+
+                activeToggler(beforeThumb, thisThumb);
+            })
+        }
+    }
+
+    var activeToggler = function (beforeThum, thisThum) {
+        for (var i = 0; i < beforeThum.length; i++) {
+            beforeThum[i].classList.remove('activeThumb');
+        }
+        for (var i = 0; i < thisThum.length; i++) {
+            thisThum[i].classList.add('activeThumb');
+        }
+    }
+
+    thumbChanger();
 }
 
 var initFeatured = function () {

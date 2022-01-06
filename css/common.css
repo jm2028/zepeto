@@ -3,7 +3,6 @@
 html, body, main { height: 100%; }
 body { font-family: 'Rubik', sans-serif; overflow-y: overlay; overflow-x: hidden; }
 .nanumSquare { font-family: 'NanumSquare', sans-serif; font-weight: normal; letter-spacing: -0.5px; }
-.deadFontWalking { font-family: 'Dead Font Walking', sans-serif; }
 
 .main_wrap { overflow-y: overlay; }
 body::-webkit-scrollbar,

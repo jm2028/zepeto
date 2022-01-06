@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
     <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/dead-font-walking">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Carter+One">
     <link rel="stylesheet" href="./css/reset.min.css">
     <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/common.css">
@@ -17,21 +18,55 @@
     <header><div data-include-path="header.html" id="header"></div></header>
     <main>
         <section class="play_wrap">
-            <div class="play_thumb">
-                <div class="thumb_visual ghost">
+            <div class="play_thumb ghost activeThumb">
+                <div class="thumb_visual">
                     <p class="thumb_title deadFontWalking">You who received an unknown invitation... <br>Open the wedding invitation</p>
                     <img class="thumb_object ghost_mummy" src="./img/play/play_thumb_ghost_mummy.png" alt="mummy">
                     <img class="thumb_object ghost_harlequin" src="./img/play/play_thumb_ghost_harlequin.png" alt="harlequin">
                     <img class="thumb_object ghost_skull" src="./img/play/play_thumb_ghost_skull.png" alt="skull">
                     <img class="thumb_object ghost_smoke" src="./img/play/play_thumb_ghost_smoke.png" alt="smoke">
                 </div>
-                <i class="thumb_bg ghost"></i>
+                <i class="thumb_bg"></i>
+            </div>
+            <div class="play_thumb emoji">
+                <div class="thumb_visual">
+                    <p class="emoji_text_box left nanumSquare">미안~ 내리는 역을 놓쳐서 <br>되돌아 오느라 늦었어 <img src="img/play/play_thumb_emoji_sad.png" alt="emoji sad" class="icn_emoji sad"></i></p>
+                    <p class="emoji_text_box right nanumSquare">괜찮아 천천히 와~ <img src="img/play/play_thumb_emoji_smile.png" alt="emoji smile" class="icn_emoji smile"></i></p>
+                    <img class="thumb_object emoji_girl" src="./img/play/play_thumb_emoji_girl.png" alt="girl">
+                    <img class="thumb_object emoji_boy" src="./img/play/play_thumb_emoji_boy.png" alt="boy">
+                    <img class="thumb_object emoji_bg_1" src="./img/play/play_thumb_emoji_bg_1.png" alt="emoji">
+                    <img class="thumb_object emoji_bg_2" src="./img/play/play_thumb_emoji_bg_2.png" alt="emoji">
+                    <img class="thumb_object emoji_bg_3" src="./img/play/play_thumb_emoji_bg_3.png" alt="emoji">
+                    <img class="thumb_object emoji_bg_4" src="./img/play/play_thumb_emoji_bg_4.png" alt="emoji">
+                    <img class="thumb_object emoji_bg_5" src="./img/play/play_thumb_emoji_bg_5.png" alt="emoji">
+                    <img class="thumb_object emoji_bg_6" src="./img/play/play_thumb_emoji_bg_6.png" alt="emoji">
+                    <img class="thumb_object emoji_bg_7" src="./img/play/play_thumb_emoji_bg_7.png" alt="emoji">
+                    <img class="thumb_object emoji_bg_8" src="./img/play/play_thumb_emoji_bg_8.png" alt="emoji">
+                </div>
+                <i class="thumb_bg"></i>
+            </div>
+            <div class="play_thumb friendship">
+                <div class="thumb_visual">
+                    <p class="thumb_title carterOne">Do my friends know me well?</p>
+                    <img class="thumb_object friendship_friend" src="./img/play/play_thumb_friendship_friend.png" alt="friend">
+                    <img class="thumb_object friendship_bg_1" src="./img/play/play_thumb_friendship_bg_1.png" alt="heart">
+                    <img class="thumb_object friendship_bg_2" src="./img/play/play_thumb_friendship_bg_2.png" alt="heart">
+                    <img class="thumb_object friendship_bg_3" src="./img/play/play_thumb_friendship_bg_3.png" alt="heart">
+                    <img class="thumb_object friendship_bg_4" src="./img/play/play_thumb_friendship_bg_4.png" alt="heart">
+                </div>
+                <i class="thumb_bg"></i>
+            </div>
+            <div class="play_thumb mbti">
+                <div class="thumb_visual">
+                    <p class="thumb_title">MBTI ?</p>
+                </div>
+                <i class="thumb_bg"></i>
             </div>
             <div class="play_nav">
                 <div class="play_nav_explain">
                     <h2 class="play_title">Play With Friends</h2>
                     <ul class="subject_wrap">
-                        <li class="subject_list ghost on">
+                        <li class="subject_list ghost activeThumb">
                             <h3 class="subject_title">Ghost Wedding</h3>
                             <p class="subject_desc nanumSquare">청첩장에는 신랑과 신부 이름이 적혀있습니다. <br>할로윈의 기운에 휩싸여 유체이탈을 하게 됩니다. <br>어떤 유령이 되었나요?</p>
                             <button type="button" class="subject_btn nanumSquare">청첩장 열어보기</button>
@@ -55,20 +90,29 @@
                 </div>
                 <div class="play_nav_slider">
                     <div class="swiper-wrapper">
+                        <div class="swiper-slide nav_slider_item ghost activeThumb">
+                            <button type="button" class="nav_slider_box" data-item="ghost">
+                                <p class="nav_slider_title nanumSquare">제페토 유령 결혼식</p>
+                                <img class="nav_slider_img" src="./img/play/play_slider_ghost.png" alt="ghost">
+                            </button>
+                        </div>
                         <div class="swiper-slide nav_slider_item emoji">
-                            <div class="nav_slider_box">
+                            <button type="button" class="nav_slider_box" data-item="emoji">
                                 <p class="nav_slider_title nanumSquare">내가 만약 이모지라면?</p>
-                            </div>
+                                <img class="nav_slider_img" src="./img/play/play_slider_emoji.png" alt="emoji">
+                            </button>
                         </div>
                         <div class="swiper-slide nav_slider_item friendship">
-                            <div class="nav_slider_box">
+                            <button type="button" class="nav_slider_box" data-item="friendship">
                                 <p class="nav_slider_title nanumSquare">나에 대해 얼마나 알까?</p>
-                            </div>
+                                <img class="nav_slider_img" src="./img/play/play_slider_friendship.png" alt="friendship">
+                            </button>
                         </div>
                         <div class="swiper-slide nav_slider_item mbti">
-                            <div class="nav_slider_box">
+                            <button type="button" class="nav_slider_box" data-item="mbti">
                                 <p class="nav_slider_title nanumSquare">나의 업무용 MBTI는?</p>
-                            </div>
+                                <img class="nav_slider_img" src="./img/play/play_slider_mbti.png" alt="mbti">
+                            </button>
                         </div>
                     </div>
                 </div>
