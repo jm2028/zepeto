@@ -160,7 +160,7 @@ var InitReality = function () {
     NormalMarquee(marqueeWrap);
 }
 
-var initPlay = function () {
+var InitPlay = function () {
     var playNavSlider = new Swiper('.play_nav_slider', {
         slidesPerView: "auto",
         spaceBetween: 20,
@@ -179,6 +179,7 @@ var initPlay = function () {
                 var thisThumb = document.querySelectorAll('.' + categoryData);
 
                 activeToggler(beforeThumb, thisThumb);
+                orderChanger(this);
             })
         }
     }
@@ -192,10 +193,97 @@ var initPlay = function () {
         }
     }
 
+    var orderChanger = function (changerBtn) {
+        var currentSliderBox = changerBtn.parentElement;
+        var thumbChangerBox = document.getElementsByClassName('nav_slider_item');
+
+        var nextOrderChanger = function (target) {
+            var nextElem = target.nextElementSibling;
+            if (nextElem === null) {
+                return;
+            }
+            nextElem.style.order = "-1";
+
+            if (nextElem.nextElementSibling !== null) {
+                return nextOrderChanger(nextElem);
+            }
+        }
+
+        for (var i = 0; i < thumbChangerBox.length; i++) {
+            thumbChangerBox[i].style.order = "";
+        }
+
+        nextOrderChanger(currentSliderBox);
+    }
+
     thumbChanger();
 }
 
-var initFeatured = function () {
+var InitPlayDetail = function () {
+    var Ghost = function () {
+        var groomName;
+        var brideName;
+        var groomCharacter;
+        var brideCharacter;
+        var btnNameConfirm = document.getElementsByClassName('js-nameConfirm')[0];
+        var btnCharacterSelector = document.querySelectorAll('.js-characterSelector');
+
+        var characterSelector = function (button) {
+            var beforeActive;
+            for (var i = 0; i < button.length; i++) {
+                button[i].addEventListener('click', function () {
+                    if (this.hasClass('js-groomSelector')) {
+                        beforeActive = document.getElementsByClassName('js-groomSelector active')[0];
+                        groomCharacter = this.dataset.character;
+
+                        console.log(groomCharacter, beforeActive);
+                    }
+                    else {
+                        beforeActive = document.getElementsByClassName('js-brideSelector active')[0];
+                        brideCharacter = this.dataset.character;
+                        console.log(brideCharacter);
+                    }
+
+                    if(beforeActive !== undefined) {
+                        beforeActive.classList.remove('active');
+                    };
+
+                    this.classList.add('active');
+                })
+            }
+        }
+
+        btnNameConfirm.addEventListener('click', function () {
+            groomName = document.getElementsByClassName('js-groomName')[0].value;
+            brideName = document.getElementsByClassName('js-brideName')[0].value;
+
+            console.log(groomName, brideName);
+        })
+
+        characterSelector(btnCharacterSelector);
+
+    }
+    var nextBtn = document.getElementsByClassName('game_btn_next');
+    var progressBar = document.getElementsByClassName('inner_bar')[0];
+    var nextAction = function (target, idx) {
+        var currentContentsWrap = target.parentElement;
+        var idx = idx;
+
+        target.addEventListener('click', function () {
+            progressBar.style.width = (25 * idx) + 50 + "%";
+            currentContentsWrap.classList.remove('on');
+            currentContentsWrap.nextElementSibling.classList.add('on');
+        })
+    }
+    for (var i = 0; i < nextBtn.length; i++) {
+        nextAction(nextBtn[i], i);
+    }
+
+    Ghost();
+
+}
+
+var InitFeatured = function () {
     var $followWrap = document.getElementsByClassName('js-followWrap')[0];
     var $followCard = $followWrap.getElementsByClassName('js-followCard');
     var $followWrapWidth = $followWrap.offsetWidth / 2;

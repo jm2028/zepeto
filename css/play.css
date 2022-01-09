@@ -48,7 +48,8 @@
 .play_nav_explain .subject_list.activeThumb { display: block; }
 .play_nav_explain .subject_title { margin-top: 6px; font-size: 50px; font-weight: bold; }
 .play_nav_explain .subject_desc { margin-top: 23px; font-size: 18px; font-weight: bold; line-height: 1.65; }
-.play_nav_explain .subject_btn {  margin-top: 27px; padding: 0 29px; height: 42px; color: #fff; font-size: 16px; font-weight: bold; -webkit-transform: rotate(0.05deg); transform: rotate(0.05deg); border-radius: 50px; }
+.play_nav_explain .subject_btn { display: inline-flex; align-items: center; text-align: center; margin-top: 27px; padding: 0 29px; height: 42px; color: #fff; font-size: 16px; font-weight: bold; -webkit-transform: rotate(0.05deg); transform: rotate(0.05deg); -webkit-transition: .25s ease; transition: .25s ease; border-radius: 50px; }
+.play_nav_explain .subject_btn:hover { -webkit-transform: translate3d(0, -5px, 0); transform: translate3d(0, -5px, 0); box-shadow: 0 4px 6px rgba(0, 0, 0, .4); }
 .play_nav_explain .ghost .subject_btn { background: #000; }
 .play_nav_explain .emoji .subject_btn { background: #fe9a00; }
 .play_nav_explain .friendship .subject_btn { background: #7b57ff; }
@@ -64,12 +65,56 @@
 .play_nav_slider .friendship .nav_slider_box { background: linear-gradient(#7153f9, #9556ff); }
 .play_nav_slider .mbti .nav_slider_box { background: linear-gradient(#33a474, #5fcf9f); }
 .play_nav_slider .nav_slider_title { position: relative; font-size: 16px; color: #fff; text-align: center; font-weight: bold; -webkit-transform: rotate(0.05deg); transform: rotate(0.05deg); z-index: 1; }
-.play_nav_slider .nav_slider_img { position: absolute; left: 50%; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); transition: .8s ease; }
-.play_nav_slider .nav_slider_box:hover .nav_slider_img { -webkit-transform: translate3d(-50%, 0, 0) scale(1.08); transform: translate3d(-50%, 0, 0) scale(1.12); transition: 2s ease; }
+.play_nav_slider .nav_slider_img { position: absolute; left: 50%; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
 .play_nav_slider .ghost .nav_slider_img { top: 38%; }
 .play_nav_slider .emoji .nav_slider_img { top: 37.5%; }
 .play_nav_slider .friendship .nav_slider_img { top: 21.4%; }
 .play_nav_slider .mbti .nav_slider_img { top: 38%; }
+
+.game_wrap { display: flex; justify-content: center; width: 100%; height: 100%; }
+.game_wrap.ghost_wedding { background: url('../img/play/play_thumb_ghost_bg.jpg') no-repeat center / cover; }
+.game_wrap .game_inner { position: relative; width: 100%; padding-top: 16vh; box-sizing: border-box; }
+.game_wrap .game_page_wrap { position: relative; margin-top: 54px; }
+.game_wrap .game_page { position: absolute; top: 0; left: 0; right: 0; display: none; }
+.game_wrap .game_page.on { display: block; }
+.game_wrap .game_progress { display: flex; justify-content: center; align-items: center; font-size: 18px; color: #fff; }
+.game_wrap .game_progress .progress_bar { position: relative; margin: 0 10px; width: 120px; height: 1px; background: rgba(255, 255, 255, .3); }
+.game_wrap .game_progress .progress_bar .inner_bar { position: absolute; top: 0; left: 0; width: 25%; height: 100%; background: rgba(255, 255, 255, 1); -webkit-transition: width .4s ease; transition: width .4s ease; }
+.game_wrap .game_title { font-size: 24px; color: rgba(255, 255, 255, .6); text-align: center; line-height: 1.4; }
+.game_wrap .game_title + .game_contents { margin-top: 70px; }
+.game_wrap .game_contents { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;}
+.game_wrap .game_contents .ghost_name { width: 500px; height: 80px; padding: 0 15px; font-size: 24px; color: #fff; text-align: center; border: 1px solid #fff; border-radius: 20px; background: transparent; box-sizing: border-box; }
+.game_wrap .game_contents .ghost_name::placeholder { color: #fff; }
+.game_wrap .game_contents .ghost_name + .ghost_name { margin-top: 29px; }
+.game_wrap .game_btn_next { display: flex; align-items: center; height: 50px; margin: 0 auto; padding: 0 48px; opacity: .6; color: #fff; font-size: 18px; font-weight: bold; border: 1px solid rgba(255, 255, 255, 1); border-radius: 50px; box-sizing: border-box; -webkit-transition: opacity .25s ease, background-color .25s ease, color .25s ease; transition: opacity .25s ease, background-color .25s ease, color .25s ease; }
+.game_wrap .wedding_invitation { color: #fff; font-size: 44px; text-align: center; }
+.game_wrap .page_1 .game_btn_next { margin-top: 69px; }
+.game_wrap .page_1 .wedding_invitation { margin-top: 95px; }
+.game_wrap .game_img_wrap { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; }
+.game_wrap .game_character { -webkit-filter: brightness(0.3); filter: brightness(0.3); -webkit-transition: filter .25s ease; transition: filter .25s ease; }
+.game_wrap .game_character.active,
+.game_wrap .game_character:hover { -webkit-filter: brightness(1); filter: brightness(1); }
+.game_wrap .game_character.active img,
+.game_wrap .game_character:hover img { filter: drop-shadow(0 0 10px rgba(255, 255, 255, .2)); }
+.game_wrap .game_btn_next:hover { opacity: 1; color: #5952ff; background: #fff; }
+.game_wrap .wedding_wrap { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; }
+.game_wrap .wedding_thumb { position: relative; border-radius: 20px; overflow: hidden; }
+.game_wrap .wedding_thumb .thumb_img { border-radius: 20px; }
+.game_wrap .wedding_thumb .thumb_text { position: absolute; top: 58px; left:0; width: 100%; text-align: center; }
+.game_wrap .wedding_thumb .thumb_text .character_name { font-size: 24px; color: #fefefe; text-align: center; }
+.game_wrap .wedding_thumb .thumb_text .wedding_invitation { margin-top: 35px; font-size: 40px; color: #fff; text-align: center; }
+.game_wrap .wedding_thumb .thumb_character { position: absolute; bottom: 0; left: 50%; filter: drop-shadow(0 0 10px rgba(255, 255, 255, .2)); }
+.game_wrap .wedding_thumb .thumb_character.groom { bottom: 0%; transform: translate3d(-80%, 15%, 0); }
+.game_wrap .wedding_thumb .thumb_character.bride { bottom: 0%; transform: translate3d(-30%, 20%, 0); }
+.game_wrap .wedding_subject .user_name { font-size: 24px; color: #fff; }
+.game_wrap .wedding_subject .wedding_celebration { margin-top: 16px; font-size: 40px; color: #fff; }
+.game_wrap .wedding_subject .wedding_desc { margin-top: 36px; font-size: 18px; color: #fff; line-height: 1.5; }
+.game_wrap .wedding_subject .wedding_hash { margin-top: 36px; font-size: 18px; color: #fff; }
+.game_wrap .wedding_subject .wedding_btn_wrap { display: flex; align-items: center; margin-top: 42px; }
+.game_wrap .wedding_subject .wedding_btn { display: flex; align-items: center; height: 41px; padding: 0 22px; font-size: 14px; font-weight: bold; color: #fff; border-radius: 50px; }
+.game_wrap .wedding_subject .wedding_btn:nth-child(1) { border: 1px solid #fff; }
+.game_wrap .wedding_subject .wedding_btn:nth-child(2) { background: linear-gradient(to right, #c80dfb, #564ff6); }
+.game_wrap .wedding_subject .wedding_btn + .wedding_btn { margin-left: 19px; }
 
 @-webkit-keyframes smoke {
     0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); opacity: 1; }

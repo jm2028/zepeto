@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Wedding - ZEPETO</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/dead-font-walking">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/play.css">
+</head>
+<body>
+    <header><div data-include-path="header.html" id="header"></div></header>
+    <main class="main_wrap">
+        <section class="game_wrap ghost_wedding">
+            <div class="game_inner">
+                <div class="game_progress">
+                    <span class="nanumSquare">01</span>
+                    <span class="progress_bar"><span class="inner_bar"></span></span>
+                    <span class="nanumSquare">04</span>
+                </div>
+                <div class="game_page_wrap">
+                    <div class="game_page page_1 on">
+                        <div class="game_title nanumSquare">청첩장에는 신랑과 신부의 이름이 적혀있습니다 <br>신랑과 신부의 이름은 무엇입니까?</div>
+                        <div class="game_contents">
+                            <input type="text" class="ghost_name js-groomName nanumSquare" placeholder="신랑 이름">
+                            <input type="text" class="ghost_name js-brideName nanumSquare" placeholder="신부 이름">
+                        </div>
+                        <button type="button" class="game_btn_next js-nameConfirm nanumSquare">다음으로</button>
+                        <p class="wedding_invitation deadFontWalking">WEDDING INVITATION</p>
+                    </div>
+                    <div class="game_page page_2">
+                        <div class="game_title nanumSquare">청첩장을 여는 순간 할로윈의 기운에 휩싸여 <br>유체이탈이 됩니다 신랑은 어떤 유령이 되었나요?</div>
+                        <div class="game_contents">
+                            <div class="game_img_wrap">
+                                <button type="button" class="game_character js-characterSelector js-groomSelector" data-character="joker">
+                                    <img src="./img/play/play_ghost_groom_1.png" alt="joker">
+                                </button>
+                                <button type="button" class="game_character js-characterSelector js-groomSelector" data-character="reaper">
+                                    <img src="./img/play/play_ghost_groom_2.png" alt="reaper">
+                                </button>
+                                <button type="button" class="game_character js-characterSelector js-groomSelector"  data-character="pumpkin">
+                                    <img src="./img/play/play_ghost_groom_3.png" alt="pumpkin">
+                                </button>
+                                <button type="button" class="game_character js-characterSelector js-groomSelector" data-character="zombie">
+                                    <img src="./img/play/play_ghost_groom_4.png" alt="zombie">
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="game_btn_next js-groomConfirm nanumSquare">다음으로</button>
+                    </div>
+                    <div class="game_page page_3">
+                        <div class="game_title nanumSquare">원래 몸으로 돌아가기 위해 유령 결혼식을 <br>올려야한다고 합니다 신부는 어떤 유령이 되었나요?</div>
+                        <div class="game_contents">
+                            <div class="game_img_wrap">
+                                <button type="button" class="game_character js-characterSelector js-brideSelector" data-character="mira">
+                                    <img src="./img/play/play_ghost_bride_1.png" alt="mira">
+                                </button>
+                                <button type="button" class="game_character js-characterSelector js-brideSelector" data-character="harlequin">
+                                    <img src="./img/play/play_ghost_bride_2.png" alt="harlequin">
+                                </button>
+                                <button type="button" class="game_character js-characterSelector js-brideSelector" data-character="saly">
+                                    <img src="./img/play/play_ghost_bride_3.png" alt="saly">
+                                </button>
+                                <button type="button" class="game_character js-characterSelector js-brideSelector" data-character="girlghost">
+                                    <img src="./img/play/play_ghost_bride_4.png" alt="girlghost">
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="game_btn_next js-brideConfirm nanumSquare">다음으로</button>
+                    </div>
+                    <div class="game_page page_4">
+                        <div class="wedding_wrap">
+                            <div class="wedding_thumb">
+                                <img src="./img/play/play_ghost_wedding_bg.jpg" alt="대저택" class="thumb_img">
+                                <div class="thumb_text">
+                                    <p class="character_name">JACK O LANTERN & HARLEY QUINN</p>
+                                    <p class="wedding_invitation deadFontWalking">WEDDING INVITATION</p>
+                                </div>
+                                <img class="thumb_character groom" src="./img/play/play_ghost_groom_3.png">
+                                <img class="thumb_character bride" src="./img/play/play_ghost_bride_2.png">
+                            </div>
+                            <div class="wedding_subject">
+                                <p class="user_name nanumSquare">
+                                    <span class="groom_character">잭오랜턴</span><span class="groom_name">###</span>님과 
+                                    <span class="birde_character">할리퀸</span> <span class="bride_name">##</span>님의</p>
+                                <p class="wedding_celebration nanumSquare">결혼을 축하합니다!</p>
+                                <p class="wedding_desc nanumSquare">이 행운의 청접장은 제페토에서 최초로 시작되었으며 인스타그램에 <br>아래 해시태그와 함께 업로드한 사람에게 행운을 주었습니다.</p>
+                                <p class="wedding_hash">#ZEPETOGhostWedding #ZEPETO #Halloween</p>
+                                <div class="wedding_btn_wrap">
+                                    <a href="./play.html" class="wedding_btn nanumSquare">테스트 더보기 ></a>
+                                    <a href="#" class="wedding_btn nanumSquare">업로드 하기 ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/common.js"></script>
+    <script>
+        InitPlayDetail();
+    </script>
+</body>
+</html>

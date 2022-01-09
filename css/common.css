@@ -11,7 +11,7 @@ body::-webkit-scrollbar-thumb,
 .main_wrap::-webkit-scrollbar-thumb { border-radius: 10px; background: #5952ff; }
 body::-webkit-scrollbar-button,
 .main_wrap::-webkit-scrollbar-button { height: 5px; background: transparent; }
-button { border: none; cursor: pointer; background: none; font-family: 'Rubik', sans-serif; }
+button { padding: 0; border: none; cursor: pointer; background: none; font-family: 'Rubik', sans-serif; }
 a { text-decoration: none; }
 img { vertical-align: top; max-width: 100%; }
 
