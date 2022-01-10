@@ -36,16 +36,16 @@
                         <div class="game_title nanumSquare">청첩장을 여는 순간 할로윈의 기운에 휩싸여 <br>유체이탈이 됩니다 신랑은 어떤 유령이 되었나요?</div>
                         <div class="game_contents">
                             <div class="game_img_wrap">
-                                <button type="button" class="game_character js-characterSelector js-groomSelector" data-character="joker">
+                                <button type="button" class="game_character js-characterSelector js-groomSelector">
                                     <img src="./img/play/play_ghost_groom_1.png" alt="joker">
                                 </button>
-                                <button type="button" class="game_character js-characterSelector js-groomSelector" data-character="reaper">
+                                <button type="button" class="game_character js-characterSelector js-groomSelector">
                                     <img src="./img/play/play_ghost_groom_2.png" alt="reaper">
                                 </button>
-                                <button type="button" class="game_character js-characterSelector js-groomSelector"  data-character="pumpkin">
+                                <button type="button" class="game_character js-characterSelector js-groomSelector">
                                     <img src="./img/play/play_ghost_groom_3.png" alt="pumpkin">
                                 </button>
-                                <button type="button" class="game_character js-characterSelector js-groomSelector" data-character="zombie">
+                                <button type="button" class="game_character js-characterSelector js-groomSelector">
                                     <img src="./img/play/play_ghost_groom_4.png" alt="zombie">
                                 </button>
                             </div>
@@ -56,37 +56,38 @@
                         <div class="game_title nanumSquare">원래 몸으로 돌아가기 위해 유령 결혼식을 <br>올려야한다고 합니다 신부는 어떤 유령이 되었나요?</div>
                         <div class="game_contents">
                             <div class="game_img_wrap">
-                                <button type="button" class="game_character js-characterSelector js-brideSelector" data-character="mira">
+                                <button type="button" class="game_character js-characterSelector js-brideSelector">
                                     <img src="./img/play/play_ghost_bride_1.png" alt="mira">
                                 </button>
-                                <button type="button" class="game_character js-characterSelector js-brideSelector" data-character="harlequin">
+                                <button type="button" class="game_character js-characterSelector js-brideSelector">
                                     <img src="./img/play/play_ghost_bride_2.png" alt="harlequin">
                                 </button>
-                                <button type="button" class="game_character js-characterSelector js-brideSelector" data-character="saly">
+                                <button type="button" class="game_character js-characterSelector js-brideSelector">
                                     <img src="./img/play/play_ghost_bride_3.png" alt="saly">
                                 </button>
-                                <button type="button" class="game_character js-characterSelector js-brideSelector" data-character="girlghost">
+                                <button type="button" class="game_character js-characterSelector js-brideSelector">
                                     <img src="./img/play/play_ghost_bride_4.png" alt="girlghost">
                                 </button>
                             </div>
                         </div>
-                        <button type="button" class="game_btn_next js-brideConfirm nanumSquare">다음으로</button>
+                        <button type="button" class="game_btn_next js-lastConfirm nanumSquare">다음으로</button>
                     </div>
                     <div class="game_page page_4">
                         <div class="wedding_wrap">
                             <div class="wedding_thumb">
                                 <img src="./img/play/play_ghost_wedding_bg.jpg" alt="대저택" class="thumb_img">
                                 <div class="thumb_text">
-                                    <p class="character_name">JACK O LANTERN & HARLEY QUINN</p>
+                                    <p class="character_name">
+                                        <span class="js-thumbGroomName">JACK O LANTERN</span> & <span class="js-thumbBrideName">HARLEY QUINN</span></p>
                                     <p class="wedding_invitation deadFontWalking">WEDDING INVITATION</p>
                                 </div>
-                                <img class="thumb_character groom" src="./img/play/play_ghost_groom_3.png">
-                                <img class="thumb_character bride" src="./img/play/play_ghost_bride_2.png">
+                                <img class="thumb_character groom js-thumbGroom" src="./img/play/play_ghost_thumb_groom_3.png">
+                                <img class="thumb_character bride js-thumbBride" src="./img/play/play_ghost_thumb_bride_2.png">
                             </div>
                             <div class="wedding_subject">
                                 <p class="user_name nanumSquare">
-                                    <span class="groom_character">잭오랜턴</span><span class="groom_name">###</span>님과 
-                                    <span class="birde_character">할리퀸</span> <span class="bride_name">##</span>님의</p>
+                                    <span class="groom_character js-descGroomCharacter">잭오랜턴</span> <span class="groom_name js-descGroomName">###</span> 님과 
+                                    <span class="birde_character js-descBrideCharacter">할리퀸</span> <span class="bride_name js-descBrideName">###</span> 님의</p>
                                 <p class="wedding_celebration nanumSquare">결혼을 축하합니다!</p>
                                 <p class="wedding_desc nanumSquare">이 행운의 청접장은 제페토에서 최초로 시작되었으며 인스타그램에 <br>아래 해시태그와 함께 업로드한 사람에게 행운을 주었습니다.</p>
                                 <p class="wedding_hash">#ZEPETOGhostWedding #ZEPETO #Halloween</p>

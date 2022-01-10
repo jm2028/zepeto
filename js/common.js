@@ -221,12 +221,32 @@ var InitPlay = function () {
 
 var InitPlayDetail = function () {
     var Ghost = function () {
-        var groomName;
-        var brideName;
-        var groomCharacter;
-        var brideCharacter;
+        var groomNameInput = document.getElementsByClassName('js-groomName')[0];
+        var brideNameInput = document.getElementsByClassName('js-brideName')[0];
+        var thumbGroomName = document.getElementsByClassName('js-thumbGroomName')[0];
+        var thumbBrideName = document.getElementsByClassName('js-thumbBrideName')[0];
+        var thumbGroomImg = document.getElementsByClassName('js-thumbGroom')[0];
+        var thumbBrideImg = document.getElementsByClassName('js-thumbBride')[0];
+        var descGroomName = document.getElementsByClassName('js-descGroomCharacter')[0];
+        var descBrideName = document.getElementsByClassName('js-descBrideCharacter')[0]
+        var groomName = document.getElementsByClassName('js-descGroomName')[0];
+        var brideName = document.getElementsByClassName('js-descBrideName')[0];
         var btnNameConfirm = document.getElementsByClassName('js-nameConfirm')[0];
         var btnCharacterSelector = document.querySelectorAll('.js-characterSelector');
+        var groomCharacterList = [];
+        var brideCharacterList = [];
+
+        var JOKER = new Character('JOKER', '조커');
+        var REAPER = new Character('REAPER', '저승사자');
+        var JACK = new Character('JACK O  LANTERN', '잭오랜턴');
+        var JIANGSHI  = new Character('JIANGSHI', '강시');
+        var MUMMY = new Character('MUMMY', '미라');
+        var HARLEQUIN = new Character('HARLEQUIN', '할리퀸');
+        var SALLY = new Character('SALLY', '샐리');
+        var GHOST = new Character('VIRGIN GHOST', '처녀귀신');
+        
+        groomCharacterList.push(JOKER, REAPER, JACK, JIANGSHI);
+        brideCharacterList.push(MUMMY, HARLEQUIN, SALLY, GHOST);
 
         var characterSelector = function (button) {
             var beforeActive;
@@ -234,14 +254,17 @@ var InitPlayDetail = function () {
                 button[i].addEventListener('click', function () {
                     if (this.hasClass('js-groomSelector')) {
                         beforeActive = document.getElementsByClassName('js-groomSelector active')[0];
-                        groomCharacter = this.dataset.character;
-
-                        console.log(groomCharacter, beforeActive);
+                        descGroomName.innerHTML = groomCharacterList[getIndex(this)].koname;
+                        thumbGroomName.innerHTML = groomCharacterList[getIndex(this)].enname;
+                        thumbGroomImg.src = "./img/play/play_ghost_thumb_groom_" + (getIndex(this) + 1) + ".png";
+                        thumbGroomImg.dataset.type = (getIndex(this) + 1);
                     }
                     else {
                         beforeActive = document.getElementsByClassName('js-brideSelector active')[0];
-                        brideCharacter = this.dataset.character;
-                        console.log(brideCharacter);
+                        descBrideName.innerHTML = brideCharacterList[getIndex(this)].koname;
+                        thumbBrideName.innerHTML = brideCharacterList[getIndex(this)].enname;
+                        thumbBrideImg.src = "./img/play/play_ghost_thumb_Bride_" + (getIndex(this) + 1) + ".png";
+                        thumbBrideImg.dataset.type = (getIndex(this) + 1);
                     }
 
                     if(beforeActive !== undefined) {
@@ -254,14 +277,16 @@ var InitPlayDetail = function () {
         }
 
         btnNameConfirm.addEventListener('click', function () {
-            groomName = document.getElementsByClassName('js-groomName')[0].value;
-            brideName = document.getElementsByClassName('js-brideName')[0].value;
-
-            console.log(groomName, brideName);
+            groomName.innerHTML = groomNameInput.value;
+            brideName.innerHTML = brideNameInput.value;
         })
 
         characterSelector(btnCharacterSelector);
 
+        function Character(enname, koname) {
+            this.enname = enname;
+            this.koname = koname;
+        }
     }
     var nextBtn = document.getElementsByClassName('game_btn_next');
     var progressBar = document.getElementsByClassName('inner_bar')[0];
@@ -271,6 +296,7 @@ var InitPlayDetail = function () {
 
         target.addEventListener('click', function () {
             progressBar.style.width = (25 * idx) + 50 + "%";
+            currentContentsWrap.classList.add('end');
             currentContentsWrap.classList.remove('on');
             currentContentsWrap.nextElementSibling.classList.add('on');
         })
@@ -497,5 +523,14 @@ HTMLElement.prototype.hasClass = function (cls) {
     }
     return false;
 };
+
+function getIndex (target) {
+    var i = 0;
+    while((target = target.previousElementSibling) != null) {
+        i++;
+    }
+
+    return i;
+}
 
 globalInit();
