@@ -48,8 +48,7 @@
 .play_nav_explain .subject_list.activeThumb { display: block; }
 .play_nav_explain .subject_title { margin-top: 6px; font-size: 50px; font-weight: bold; }
 .play_nav_explain .subject_desc { margin-top: 23px; font-size: 18px; font-weight: bold; line-height: 1.65; }
-.play_nav_explain .subject_btn { display: inline-flex; align-items: center; text-align: center; margin-top: 27px; padding: 0 29px; height: 42px; color: #fff; font-size: 16px; font-weight: bold; -webkit-transform: rotate(0.05deg); transform: rotate(0.05deg); -webkit-transition: .25s ease; transition: .25s ease; border-radius: 50px; }
-.play_nav_explain .subject_btn:hover { -webkit-transform: translate3d(0, -5px, 0); transform: translate3d(0, -5px, 0); box-shadow: 0 4px 6px rgba(0, 0, 0, .4); }
+.play_nav_explain .subject_btn { display: inline-flex; align-items: center; text-align: center; margin-top: 27px; padding: 0 29px; height: 42px; color: #fff; font-size: 16px; font-weight: bold; -webkit-transform: rotate(0.05deg); transform: rotate(0.05deg); border-radius: 50px; }
 .play_nav_explain .ghost .subject_btn { background: #000; }
 .play_nav_explain .emoji .subject_btn { background: #fe9a00; }
 .play_nav_explain .friendship .subject_btn { background: #7b57ff; }
@@ -82,7 +81,7 @@
 .game_wrap .game_progress { display: flex; justify-content: center; align-items: center; font-size: 18px; color: #fff; }
 .game_wrap .game_progress .progress_bar { position: relative; margin: 0 10px; width: 120px; height: 1px; background: rgba(255, 255, 255, .3); }
 .game_wrap .game_progress .progress_bar .inner_bar { position: absolute; top: 0; left: 0; width: 25%; height: 100%; background: rgba(255, 255, 255, 1); -webkit-transition: width .4s ease; transition: width .4s ease; }
-.game_wrap .game_title { font-size: 24px; color: rgba(255, 255, 255, .6); text-align: center; line-height: 1.4; }
+.game_wrap .game_title { font-size: 24px; color: #fff; text-align: center; line-height: 1.4; }
 .game_wrap .game_title + .game_contents { margin-top: 70px; }
 .game_wrap .game_contents { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;}
 .game_wrap .game_contents .ghost_name { width: 500px; height: 80px; padding: 0 15px; font-size: 24px; color: #fff; text-align: center; border: 1px solid #fff; border-radius: 20px; background: transparent; box-sizing: border-box; }

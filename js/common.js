@@ -263,7 +263,7 @@ var InitPlayDetail = function () {
                         beforeActive = document.getElementsByClassName('js-brideSelector active')[0];
                         descBrideName.innerHTML = brideCharacterList[getIndex(this)].koname;
                         thumbBrideName.innerHTML = brideCharacterList[getIndex(this)].enname;
-                        thumbBrideImg.src = "./img/play/play_ghost_thumb_Bride_" + (getIndex(this) + 1) + ".png";
+                        thumbBrideImg.src = "./img/play/play_ghost_thumb_bride_" + (getIndex(this) + 1) + ".png";
                         thumbBrideImg.dataset.type = (getIndex(this) + 1);
                     }
 
