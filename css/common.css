@@ -44,7 +44,7 @@ img { vertical-align: top; max-width: 100%; }
 .gnb_opener_text.close { -webkit-transform: scale3d(1, 0, 1) translate3d(-50%, -50%, 0); transform: scale3d(1, 0, 1) translate3d(-50%, -50%, 0); }
 .open .gnb_wrap ~ .gnb_opener .close { -webkit-transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0); transform:  scale3d(1, 1, 1) translate3d(-50%, -50%, 0); -webkit-transition-delay: .2s; transition-delay: .2s; }
 .open .gnb_wrap ~ .gnb_opener .z { -webkit-transform: scale3d(1, 0, 1) translate3d(-50%, -50%, 0); transform: scale3d(1, 0, 1) translate3d(-50%, -50%, 0); -webkit-transition-delay: 0s; transition-delay: 0s; }
-.gnb_opener_circle { position: absolute; top: 48%; left: 50%; display: inline-block; width: 44px; height: 62px; border-radius: 50%; -webkit-transform: translate3d(-50%, -50%, 0) rotate(-50deg); transform: translate3d(-50%, -50%, 0) rotate(-50deg); transition: transform .2s ease, width .2s ease, height .2s ease; background: #9556ff; z-index: -1; }
+.gnb_opener_circle { position: absolute; top: 48%; left: 50%; display: inline-block; width: 44px; height: 62px; border-radius: 50%; -webkit-transform: translate3d(-50%, -50%, 0) rotate(-50deg); transform: translate3d(-50%, -50%, 0) rotate(-50deg); transition: transform .2s ease, width .2s ease, height .2s ease; background: #5952ff; z-index: -1; }
 .gnb_opener:hover .gnb_opener_circle { width: 60px; height: 60px; transform: rotate(0) translate3d(-50%, -50%, 0); }
 
 .marquee_wrap { position: absolute; top: 0; right: 0; width: 100%; display: flex; justify-content: flex-end; align-items: center; white-space: nowrap; overflow: hidden; }

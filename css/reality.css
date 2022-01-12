@@ -127,9 +127,9 @@
 .reality_detail_marquee .marquee_contents { padding: 0 10px; }
 
 .reality_detail .detail_btn_close { position: fixed; top: 20px; left: 25px; width: 46px; height: 46px; opacity: 0; border-radius: 50%; background: rgba(255, 255, 255, .4); -webkit-transition: opacity .2s ease 1s, background-color .2s ease; transition: opacity .2s ease 1s, background-color .2s ease; }
-.detail_btn_close.reverse { background: #9556ff; }
+.detail_btn_close.reverse { background: #5952ff; }
 .opend .detail_btn_close { opacity: 1; }
-.reality_detail .detail_btn_close:hover { background: #5952ff; }
+.reality_detail .detail_btn_close:hover { background: #9556ff; }
 .reality_detail .detail_btn_close .close_bar { position: absolute; top: 50%; left: calc(50% - 12px); width: 24px; height: 2px;  background: #fff; }
 .reality_detail .detail_btn_close .close_bar:nth-child(1) { -webkit-transform: rotate(45deg); transform: rotate(45deg); }
 .reality_detail .detail_btn_close .close_bar:nth-child(2) { -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }

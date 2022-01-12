@@ -101,7 +101,7 @@ var InitReality = function () {
         var logoColorChanger = function () {
             detailOffsetTop = detailContents.offsetTop;
 
-            if (detailOffsetTop <= realityMainWrap.scrollTop) {
+            if (detailOffsetTop <= realityMainWrap.scrollTop + 50) {
                 closeBtn.classList.add('reverse');
                 headerLogo.classList.add('original');
             }
