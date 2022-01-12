@@ -16,14 +16,14 @@
 .play_thumb .thumb_visual .thumb_object.ghost_smoke { max-width: none; left: -20%; bottom: -30%; -webkit-animation: smoke 20s infinite alternate linear; animation: smoke 20s infinite alternate linear; -webkit-transform-origin: center; transform-origin: center; z-index: 4; }
 .play_thumb .thumb_visual .thumb_object.emoji_girl { right: 51%; top: 51%; }
 .play_thumb .thumb_visual .thumb_object.emoji_boy { left: 56%; top: 51%; }
-.play_thumb .thumb_visual .thumb_object.emoji_bg_1 { top: 7%; right: 80%; }
-.play_thumb .thumb_visual .thumb_object.emoji_bg_2 { top: 33%; left: 3%; }
-.play_thumb .thumb_visual .thumb_object.emoji_bg_3 { top: 51%; right: 75%; }
-.play_thumb .thumb_visual .thumb_object.emoji_bg_4 { top: 13.5%; right: 60%; }
-.play_thumb .thumb_visual .thumb_object.emoji_bg_5 { top: 18.75%; left: 60.3%; }
-.play_thumb .thumb_visual .thumb_object.emoji_bg_6 { top: 11%; left: 78%; }
-.play_thumb .thumb_visual .thumb_object.emoji_bg_7 { top: 37.75%; left: 88%; }
-.play_thumb .thumb_visual .thumb_object.emoji_bg_8 { top: 56%; left: 81%; }
+.play_thumb .thumb_visual .thumb_object.emoji_bg_1 { top: 7%; right: 80%; animation: smileHovering1 7s ease infinite alternate; }
+.play_thumb .thumb_visual .thumb_object.emoji_bg_2 { top: 33%; left: 3%; animation: smileHovering2 6s ease infinite alternate; }
+.play_thumb .thumb_visual .thumb_object.emoji_bg_3 { top: 51%; right: 75%; animation: smileHovering3 4s ease infinite alternate; }
+.play_thumb .thumb_visual .thumb_object.emoji_bg_4 { top: 13.5%; right: 60%; animation: smileHovering3 5s ease infinite alternate-reverse; }
+.play_thumb .thumb_visual .thumb_object.emoji_bg_5 { top: 18.75%; left: 60.3%; animation: smileHovering3 10s ease infinite alternate; }
+.play_thumb .thumb_visual .thumb_object.emoji_bg_6 { top: 11%; left: 78%; animation: smileHovering1 6s ease infinite alternate-reverse; }
+.play_thumb .thumb_visual .thumb_object.emoji_bg_7 { top: 37.75%; left: 88%; animation: smileHovering2 4s ease infinite alternate-reverse; }
+.play_thumb .thumb_visual .thumb_object.emoji_bg_8 { top: 56%; left: 81%; animation: smileHovering1 7s ease infinite alternate; }
 .play_thumb .thumb_visual .thumb_object.friendship_bg_1 { top: 33.5%; right: 75.5%; }
 .play_thumb .thumb_visual .thumb_object.friendship_bg_2 { top: 54.5%; right: 83.5%; }
 .play_thumb .thumb_visual .thumb_object.friendship_bg_3 { top: 41.5%; left: 83.5%; }
@@ -34,9 +34,13 @@
 .play_thumb.ghost .thumb_visual .thumb_title { position: relative; padding: 16.5vh 3% 0; font-size: 60px; color: #fff; text-align: center; z-index: 10; animation: showUp .8s ease; }
 .play_thumb.emoji .thumb_bg { background: linear-gradient(#fd9d00, #ffb402); }
 .play_thumb.emoji .emoji_text_box { position: absolute; font-size: 24px; font-weight: bold; background-size: contain; background-repeat: no-repeat; box-sizing: border-box; line-height: 1.4; z-index: 1; }
-.play_thumb.emoji .emoji_text_box.left { top: 26.5%; right: 48.75%; width: 400px; height: 167px; padding-left: 75px; padding-top: 38px; background-image: url('../img/play/play_thumb_emoji_balloon_left.png'); }
+.play_thumb.emoji .emoji_text_box.left { top: 26.5%; right: 48.75%; width: 400px; height: 167px; padding: 38px 75px 0; background-image: url('../img/play/play_thumb_emoji_balloon_left.png'); }
 .play_thumb.emoji .emoji_text_box.right { top: 33%; left: 57%; width: 300px; height: 138px; padding-left: 50px; padding-top: 41px; background-image: url('../img/play/play_thumb_emoji_balloon_right.png'); }
 .play_thumb.emoji .emoji_text_box .icn_emoji { display: inline-block; margin-left: 4px; }
+.play_thumb.emoji .emoji_text_box .icn_emoji.sad { opacity: 0; -webkit-transform: translate3d(0, -30%, 0); transform: translate3d(0, -30%, 0); transition: .5s ease-out .15s; }
+.play_thumb.emoji .emoji_text_box .icn_emoji.sad.on { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.play_thumb.emoji .emoji_text_box .icn_emoji.smile { opacity: 0; transform: scale(0.4); transition: .3s ease .15s; }
+.play_thumb.emoji .emoji_text_box .icn_emoji.smile.on { opacity: 1; transform: scale(1); }
 .play_thumb.friendship .thumb_bg { background: linear-gradient(#7b57fe, #9556ff); }
 .play_thumb.friendship .thumb_visual .thumb_title { position: relative; padding: 17.3vh 3% 0; color: #fff; font-size: 60px; text-align: center; font-weight: bold; }
 .play_thumb.mbti .thumb_bg { background: linear-gradient(#34a475, #44b987 ); }
@@ -155,4 +159,19 @@
 @keyframes showScale {
     0% { opacity: 0; transform: scale(0.95); }
     100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes smileHovering1 {
+    0% { transform: translate3d(0, 0%, 0); }
+    100% { transform: translate3d(0, -15%, 0); }
+}
+
+@keyframes smileHovering2 {
+    0% { transform: rotate(15deg) scale(1) }
+    100% { transform: rotate(-25deg) scale(0.95); }
+}
+
+@keyframes smileHovering3 {
+    0% { transform: translate3d(0, 0%, 0); }
+    100% { transform: translate3d(0, -25%, 0); }
 }

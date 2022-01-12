@@ -161,6 +161,8 @@ var InitReality = function () {
 }
 
 var InitPlay = function () {
+    var sliderEmoji = document.getElementsByClassName('js-sliderEmoji')[0];
+
     var playNavSlider = new Swiper('.play_nav_slider', {
         slidesPerView: "auto",
         spaceBetween: 20,
@@ -216,6 +218,44 @@ var InitPlay = function () {
         nextOrderChanger(currentSliderBox);
     }
 
+    var emojiTyping = function (typingWrap, delayWrap) {
+        var i = 0;
+        var typingDelay = 150;
+        var $typingWrap = typingWrap;
+        var $typingContents = $typingWrap.innerHTML.replace(/<br>/gi, "\n");
+        var $delayWrap = delayWrap;
+        var $delayContents = $delayWrap != undefined ? $delayWrap.dataset.text.replace(/<br>/gi, "\n").length : 0;
+        var $delayCount = ($delayContents * typingDelay) + ($delayContents == 0 ? 0 : 550);
+        var $emoji = $typingWrap.nextElementSibling;
+
+        $typingWrap.dataset.text = $typingContents;
+        $emoji.classList.remove('on');
+        $typingWrap.textContent = "";
+
+        setTimeout(function () {
+            insertText();
+        }, $delayCount);
+
+        function insertText () {
+            $typingWrap.innerHTML += $typingContents[i];
+            i++;
+
+            if ($typingContents.length <= i) {
+                $emoji.classList.add('on');
+                return;
+            }
+            else {
+                setTimeout(function () {
+                    return insertText();
+                }, typingDelay)
+            }
+        }
+    }
+
+    sliderEmoji.addEventListener('click', function () {
+        emojiTyping(document.getElementsByClassName('js-typing')[0]);
+        emojiTyping(document.getElementsByClassName('js-typing')[1], document.getElementsByClassName('js-typing')[0]);
+    })
     thumbChanger();
 }
 
