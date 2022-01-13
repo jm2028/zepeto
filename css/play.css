@@ -52,11 +52,12 @@
 .play_nav_explain .subject_list.activeThumb { display: block; }
 .play_nav_explain .subject_title { margin-top: 6px; font-size: 50px; font-weight: bold; }
 .play_nav_explain .subject_desc { margin-top: 23px; font-size: 18px; font-weight: bold; line-height: 1.65; }
-.play_nav_explain .subject_btn { display: inline-flex; align-items: center; text-align: center; margin-top: 27px; padding: 0 29px; height: 42px; color: #fff; font-size: 16px; font-weight: bold; -webkit-transform: rotate(0.05deg); transform: rotate(0.05deg); border-radius: 50px; }
-.play_nav_explain .ghost .subject_btn { background: #000; }
-.play_nav_explain .emoji .subject_btn { background: #fe9a00; }
-.play_nav_explain .friendship .subject_btn { background: #7b57ff; }
-.play_nav_explain .mbti .subject_btn { background: #33a474; }
+.play_nav_explain .subject_btn { display: inline-flex; align-items: center; text-align: center; margin-top: 27px; padding: 0 29px; height: 42px; color: #fff; font-size: 16px; font-weight: bold; -webkit-transform: rotate(0.05deg); transform: rotate(0.05deg); border-radius: 50px; transition: background-color .2s, color .2s, border-color .2s; }
+.play_nav_explain .ghost .subject_btn { border: 2px solid #000; background: #000; }
+.play_nav_explain .emoji .subject_btn { border: 2px solid #fe9a00; background: #fe9a00; }
+.play_nav_explain .friendship .subject_btn { border: 2px solid #7b57ff; background: #7b57ff; }
+.play_nav_explain .mbti .subject_btn { border: 2px solid #33a474; background: #33a474; }
+.play_nav_explain .subject_btn:hover { color: #000; border: 2px solid #ededed; background: #fff; }
 
 .play_nav_slider { margin-top: 27px; }
 .play_nav_slider .nav_slider_item { width: 200px; }
