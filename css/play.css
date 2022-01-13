@@ -18,9 +18,9 @@
 .play_thumb .thumb_visual .thumb_object.emoji_boy { left: 56%; top: 51%; }
 .play_thumb .thumb_visual .thumb_object.emoji_bg_1 { top: 7%; right: 80%; animation: smileHovering1 7s ease infinite alternate; }
 .play_thumb .thumb_visual .thumb_object.emoji_bg_2 { top: 33%; left: 3%; animation: smileHovering2 6s ease infinite alternate; }
-.play_thumb .thumb_visual .thumb_object.emoji_bg_3 { top: 51%; right: 75%; animation: smileHovering3 4s ease infinite alternate; }
-.play_thumb .thumb_visual .thumb_object.emoji_bg_4 { top: 13.5%; right: 60%; animation: smileHovering3 5s ease infinite alternate-reverse; }
-.play_thumb .thumb_visual .thumb_object.emoji_bg_5 { top: 18.75%; left: 60.3%; animation: smileHovering3 10s ease infinite alternate; }
+.play_thumb .thumb_visual .thumb_object.emoji_bg_3 { top: 51%; right: 75%; animation: smileHovering2 4s ease infinite alternate; }
+.play_thumb .thumb_visual .thumb_object.emoji_bg_4 { top: 13.5%; right: 60%; animation: smileHovering2 5s ease infinite alternate-reverse; }
+.play_thumb .thumb_visual .thumb_object.emoji_bg_5 { top: 18.75%; left: 60.3%; animation: smileHovering2 10s ease infinite alternate; }
 .play_thumb .thumb_visual .thumb_object.emoji_bg_6 { top: 11%; left: 78%; animation: smileHovering1 6s ease infinite alternate-reverse; }
 .play_thumb .thumb_visual .thumb_object.emoji_bg_7 { top: 37.75%; left: 88%; animation: smileHovering2 4s ease infinite alternate-reverse; }
 .play_thumb .thumb_visual .thumb_object.emoji_bg_8 { top: 56%; left: 81%; animation: smileHovering1 7s ease infinite alternate; }
@@ -63,7 +63,7 @@
 .play_nav_slider .nav_slider_item { width: 200px; }
 .play_nav_slider .nav_slider_item.activeThumb { display: none; }
 .play_nav_slider .nav_slider_item .nav_slider_box { position: relative; display: flex; justify-content: center; align-items: flex-start; width: 200px; height: 250px; padding-top: 49px; border-radius: 20px; box-sizing: border-box; overflow: hidden; -webkit-transition: transform .3s ease, box-shadow .3s ease; transition: transform .3s ease, box-shadow .3s ease; }
-.play_nav_slider .nav_slider_item .nav_slider_box:hover { box-shadow: 0 4px 8px rgba(0, 0, 0, .3); -webkit-transform: translate3d(0, -5%, 0); transform: translate3d(0, -5%, 0); }
+.play_nav_slider .nav_slider_item .nav_slider_box:hover { box-shadow: 0 4px 8px rgba(0, 0, 0, .2); -webkit-transform: translate3d(0, -5%, 0); transform: translate3d(0, -5%, 0); }
 .play_nav_slider .ghost .nav_slider_box { background: #282828; }
 .play_nav_slider .emoji .nav_slider_box { background: linear-gradient(#fe9a00, #ffb802); }
 .play_nav_slider .friendship .nav_slider_box { background: linear-gradient(#7153f9, #9556ff); }
@@ -168,11 +168,6 @@
 }
 
 @keyframes smileHovering2 {
-    0% { transform: rotate(15deg) scale(1) }
-    100% { transform: rotate(-25deg) scale(0.95); }
-}
-
-@keyframes smileHovering3 {
     0% { transform: translate3d(0, 0%, 0); }
     100% { transform: translate3d(0, -25%, 0); }
 }

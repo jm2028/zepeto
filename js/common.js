@@ -350,31 +350,62 @@ var InitPlayDetail = function () {
 }
 
 var InitFeatured = function () {
-    var $followWrap = document.getElementsByClassName('js-followWrap')[0];
-    var $followCard = $followWrap.getElementsByClassName('js-followCard');
-    var $followWrapWidth = $followWrap.offsetWidth / 2;
-    var $followWrapHeight = $followWrap.offsetHeight / 2;
-    var xPos;
-    var yPos;
-    var timer;
-    var delay = 30;
-
-    window.addEventListener('mousemove', function (e) {
-        if (!timer) {
-            timer = setTimeout(function () {
-                timer = null;
-                xPos = ($followWrapWidth - e.clientX) * - 0.1;
-                yPos = ($followWrapHeight - e.clientY) * - 0.1;
-                for (var i = 0; i < $followCard.length; i++) {
-                    movingTarget($followCard[i], xPos, yPos);
-                }
-            }, delay);
+    var featureIntro = function () {
+        var $featureWrap = document.getElementsByClassName('featured_wrap')[0];
+        var $featureIntro = document.getElementsByClassName('featured_intro')[0];
+        var $followWrap = document.getElementsByClassName('js-followWrap')[0];
+        var $followCard = $followWrap.getElementsByClassName('js-followCard');
+        var $photoBoothBtn = document.getElementsByClassName('btn_photobooth')[0];
+        var $followWrapWidth = $followWrap.offsetWidth / 2;
+        var $followWrapHeight = $followWrap.offsetHeight / 2;
+        var xPos;
+        var yPos;
+        var timer;
+        var delay = 30;
+    
+        $featureIntro.addEventListener('mousemove', function (e) {
+            if (!timer) {
+                timer = setTimeout(function () {
+                    timer = null;
+                    xPos = ($followWrapWidth - e.clientX) * - 0.1;
+                    yPos = ($followWrapHeight - e.clientY) * - 0.1;
+                    for (var i = 0; i < $followCard.length; i++) {
+                        movingTarget($followCard[i], xPos, yPos);
+                    }
+                }, delay);
+            }
+        })
+    
+        $photoBoothBtn.addEventListener('click', function () {
+            $featureWrap.classList.add('booth');
+        })
+    
+        function movingTarget (target, xpos, ypos) {
+            target.style.transform = 'translate3d(' + xpos + 'px, ' + ypos + 'px, 0)';
         }
-    })
+    };
 
-    function movingTarget (target, xpos, ypos) {
-        target.style.transform = 'translate3d(' + xpos + 'px, ' + ypos + 'px, 0)';
+    var featureBooth = function () {
+        var btnShopFilterWrap = document.getElementsByClassName('shop_filter')[0];
+
+        btnShopFilterWrap.addEventListener('click', function (e) {
+            if (e.target.hasClass('btn_shop_filter')) {
+                filterClassAction(e.target);
+            }
+        })
+
+        function filterClassAction (target) {
+            var $this = target;
+            var $beforeActiveBtn = btnShopFilterWrap.getElementsByClassName('active')[0];
+ 
+            $beforeActiveBtn.classList.remove('active');
+            $this.classList.add('active');
+        }
     }
+
+    featureIntro();
+    featureBooth();
+    
 }
 
 function NormalMarquee(marqueeWrap, activerEventer) {
