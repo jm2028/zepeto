@@ -386,20 +386,40 @@ var InitFeatured = function () {
     };
 
     var featureBooth = function () {
-        var btnShopFilterWrap = document.getElementsByClassName('shop_filter')[0];
+        var itemCloth;
+        var itemShose;
+        var itemHat;
+        var itemBag;
+        var btnShopWrap = document.getElementsByClassName('shop_item_wrap')[0];
+        var btnShopItem = btnShopWrap.getElementsByClassName('js-shopItem');
 
-        btnShopFilterWrap.addEventListener('click', function (e) {
-            if (e.target.hasClass('btn_shop_filter')) {
-                filterClassAction(e.target);
-            }
-        })
+        for (var i = 0; i < btnShopItem.length; i++) {
+            btnShopItem[i].addEventListener('click', function (e) {
+                thumbChanger(this);
+            })
+        }
 
-        function filterClassAction (target) {
+        function thumbChanger (target) {
             var $this = target;
-            var $beforeActiveBtn = btnShopFilterWrap.getElementsByClassName('active')[0];
- 
-            $beforeActiveBtn.classList.remove('active');
-            $this.classList.add('active');
+            var $beforeActiveBtn = btnShopWrap.getElementsByClassName('on')[0];
+            
+            if ($this.dataset.cloth) {
+                itemCloth = $this.dataset.cloth;
+            }
+            else if ($this.dataset.shose) {
+                itemShose = $this.dataset.shose;
+            }
+            else if ($this.dataset.hat) {
+                itemHat = $this.dataset.hat;
+            }
+            else if ($this.dataset.bag) {
+                itemBag = $this.dataset.bag;
+            }
+
+            if ($beforeActiveBtn != undefined) {
+                $beforeActiveBtn.classList.remove('on');
+            }
+            $this.classList.add('on');
         }
     }
 

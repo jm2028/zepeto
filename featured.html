@@ -15,7 +15,7 @@
     <header><div data-include-path="header.html" id="header"></div></header>
     <main class="main_wrap">
         <div class="featured_wrap">
-            <section class="featured_intro">
+            <section class="featured_intro featured_sesction">
                 <div class="featured_title_wrap">
                     <h2 class="featured_title">FEATURED FEED</h2>
                     <button type="button" class="btn_photobooth nanumSquare">포토부스 가기</a>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </section>
-            <section class="featured_booth">
+            <section class="featured_booth featured_sesction">
                 <div class="booth_character">
                     <img src="img/featured/equip/featured_booth_character.png" alt="character">
                 </div>
@@ -52,32 +52,55 @@
                     <div class="shop_logo">
                         <img src="./img/featured/featured_booth_logo.png" alt="MLB LOGO">
                     </div>
-                    <div class="shop_filter">
-                        <button type="button" class="btn_shop_filter active nanumSquare">전체</button>
-                        <button type="button" class="btn_shop_filter nanumSquare">의상</button>
-                        <button type="button" class="btn_shop_filter nanumSquare">신발</button>
-                        <button type="button" class="btn_shop_filter nanumSquare">모자</button>
-                        <button type="button" class="btn_shop_filter nanumSquare">가방</button>
-                    </div>
+                    <ul class="shop_step_wrap">
+                        <li class="shop_step on">
+                            <div class="step_image_wrap">
+                                <img src="img/featured/featured_booth_step_cloth.png" alt="cloth">
+                            </div>
+                            <p class="step_title">STEP1</p>
+                            <p class="step_desc nanumSquare">의상을 선택하세요</p>
+                        </li>
+                        <li class="shop_step">
+                            <div class="step_image_wrap">
+                                <img src="img/featured/featured_booth_step_shose.png" alt="shose">
+                            </div>
+                            <p class="step_title">STEP2</p>
+                            <p class="step_desc nanumSquare">신발을 선택하세요</p>
+                        </li>
+                        <li class="shop_step">
+                            <div class="step_image_wrap">
+                                <img src="img/featured/featured_booth_step_hat.png" alt="hat">
+                            </div>
+                            <p class="step_title">STEP3</p>
+                            <p class="step_desc nanumSquare">모자를 선택하세요</p>
+                        </li>
+                        <li class="shop_step">
+                            <div class="step_image_wrap">
+                                <img src="img/featured/featured_booth_step_bag.png" alt="bag">
+                            </div>
+                            <p class="step_title">STEP4</p>
+                            <p class="step_desc nanumSquare">가방을 선택하세요</p>
+                        </li>
+                    </ul>
                     <div class="shop_item_wrap">
-                        <button type="button" class="shop_item_box">
-                            <p class="shop_item_price"></p>
+                        <button type="button" class="shop_item_box js-shopItem" data-cloth="1">
+                            <p class="shop_item_price"><i class="zem"></i>14</p>
                             <img src="./img/featured/item/featured_booth_item_cloth_1.png" alt="cloth_1">
                         </button>
-                        <button type="button" class="shop_item_box">
-                            <p class="shop_item_price"></p>
-                            <img src="./img/featured/item/featured_booth_item_shose_1.png" alt="cloth_1">
+                        <button type="button" class="shop_item_box js-shopItem" data-cloth="2">
+                            <p class="shop_item_price"><i class="zem"></i>14</p>
+                            <img src="./img/featured/item/featured_booth_item_cloth_2.png" alt="cloth_2">
                         </button>
-                        <button type="button" class="shop_item_box">
-                            <p class="shop_item_price"></p>
-                            <img src="./img/featured/item/featured_booth_item_hat_1.png" alt="cloth_1">
-                        </button>
-                        <button type="button" class="shop_item_box">
-                            <p class="shop_item_price"></p>
-                            <img src="./img/featured/item/featured_booth_item_bag_1.png" alt="cloth_1">
+                        <button type="button" class="shop_item_box js-shopItem" data-cloth="3">
+                            <p class="shop_item_price"><i class="zem"></i>14</p>
+                            <img src="./img/featured/item/featured_booth_item_cloth_3.png" alt="cloth_3">
                         </button>
                     </div>
+                    <button type="button" class="btn_choice nanumSquare js-btnChoice">신발 선택하기</button>
                 </div>
+            </section>
+            <section class="featured_photo featured_sesction">
+
             </section>
         </div>
     </main>
