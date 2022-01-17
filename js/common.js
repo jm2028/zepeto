@@ -386,12 +386,15 @@ var InitFeatured = function () {
     };
 
     var featureBooth = function () {
-        var itemCloth;
-        var itemShose;
-        var itemHat;
-        var itemBag;
+        var itemCloth = 0;
+        var itemShose = 0;
+        var itemHat = 0;
+        var itemBag = 0;
         var btnShopWrap = document.getElementsByClassName('shop_item_wrap')[0];
         var btnShopItem = btnShopWrap.getElementsByClassName('js-shopItem');
+        var btnNext = document.getElementsByClassName('js-btnChoice')[0];
+        var itemWrap = document.getElementsByClassName('item_wrap');
+        var chararterImg = document.getElementById('character_img');
 
         for (var i = 0; i < btnShopItem.length; i++) {
             btnShopItem[i].addEventListener('click', function (e) {
@@ -401,7 +404,7 @@ var InitFeatured = function () {
 
         function thumbChanger (target) {
             var $this = target;
-            var $beforeActiveBtn = btnShopWrap.getElementsByClassName('on')[0];
+            var $beforeActiveBtn = btnShopWrap.querySelector('.js-shopItem.on');
             
             if ($this.dataset.cloth) {
                 itemCloth = $this.dataset.cloth;
@@ -416,11 +419,24 @@ var InitFeatured = function () {
                 itemBag = $this.dataset.bag;
             }
 
+            chararterImg.src = './img/featured/equip/featured_booth_equip_cloth_' + itemCloth + '_' + itemShose + '_' + itemHat + '_' + itemBag + '.png';
+
             if ($beforeActiveBtn != undefined) {
                 $beforeActiveBtn.classList.remove('on');
             }
             $this.classList.add('on');
         }
+
+        btnNext.addEventListener('click', function () {
+            var currentItem = btnShopWrap.querySelector('.item_wrap.on');
+            var nextItem = currentItem.nextElementSibling;
+
+            if (nextItem == null) {
+                return;
+            }
+            currentItem.classList.remove('on');
+            nextItem.classList.add('on');
+        })
     }
 
     featureIntro();
