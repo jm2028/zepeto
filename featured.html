@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
     <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/featured.css?v=1">
 </head>
@@ -46,7 +47,7 @@
             </section>
             <section class="featured_booth featured_sesction">
                 <div class="booth_character">
-                    <img id="character_img" src="img/featured/equip/featured_booth_character.png" alt="character">
+                    <img id="character_img" class="character_img" src="img/featured/equip/featured_booth_character.png" alt="character">
                 </div>
                 <div class="booth_shop">
                     <div class="shop_logo">
@@ -138,9 +139,40 @@
                     </div>
                     <button type="button" class="btn_choice nanumSquare js-btnChoice">신발 선택하기</button>
                 </div>
-            </section>
-            <section class="featured_photo featured_sesction">
-
+                <div class="pose_slider_wrap">
+                    <div class="swiper-wrapper">
+                        <div class="pose_box swiper-slide">
+                            <button class="">
+                                <img src="./img/featured/photo/featured_photo_pose_1.png">
+                            </button>
+                        </div>
+                        <div class="pose_box swiper-slide">
+                            <button class="">
+                                <img src="./img/featured/photo/featured_photo_pose_2.png">
+                            </button>
+                        </div>
+                        <div class="pose_box swiper-slide">
+                            <button class="">
+                                <img src="./img/featured/photo/featured_photo_pose_3.png">
+                            </button>
+                        </div>
+                        <div class="pose_box swiper-slide">
+                            <button class="">
+                                <img src="./img/featured/photo/featured_photo_pose_4.png">
+                            </button>
+                        </div>
+                        <div class="pose_box swiper-slide">
+                            <button class="">
+                                <img src="./img/featured/photo/featured_photo_pose_5.png">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="pose_slider_btn_wrap">
+                        <button type="button" class="pose_btn pose_btn_prev nanumSquare"><span class="arrow">&lt;</span>이전포즈</button>
+                        <button type="button" class="pose_btn_photo"></button>
+                        <button type="button" class="pose_btn pose_btn_next nanumSquare">다음포즈 <span class="arrow">&gt;</span></button>
+                    </div>
+                </div>
             </section>
         </div>
     </main>

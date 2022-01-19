@@ -350,8 +350,9 @@ var InitPlayDetail = function () {
 }
 
 var InitFeatured = function () {
+    var $featureWrap = document.getElementsByClassName('featured_wrap')[0];
+
     var featureIntro = function () {
-        var $featureWrap = document.getElementsByClassName('featured_wrap')[0];
         var $featureIntro = document.getElementsByClassName('featured_intro')[0];
         var $followWrap = document.getElementsByClassName('js-followWrap')[0];
         var $followCard = $followWrap.getElementsByClassName('js-followCard');
@@ -429,18 +430,50 @@ var InitFeatured = function () {
 
         btnNext.addEventListener('click', function () {
             var currentItem = btnShopWrap.querySelector('.item_wrap.on');
+            var currentStep = document.querySelector('.shop_step.on');
+            var $beforeActiveBtn = currentItem.querySelector('.js-shopItem.on');
             var nextItem = currentItem.nextElementSibling;
-
-            if (nextItem == null) {
+            var nextStep = currentStep.nextElementSibling;
+            
+            if ($beforeActiveBtn == undefined) {
+                alert('아이템을 선택해 주세요.');
+                return;
+            };
+            if (nextStep != undefined && nextStep.nextElementSibling == undefined) {
+                btnNext.innerHTML = '촬영 하러 가기'
+            };
+            if (nextStep == undefined) {
+                $featureWrap.classList.add('photo');
                 return;
             }
+
             currentItem.classList.remove('on');
+            currentStep.classList.remove('on');
             nextItem.classList.add('on');
+            nextStep.classList.add('on');
+        })
+    }
+
+    var featurePhoto = function () {
+        var photoPoseSwiper = new Swiper('.pose_slider_wrap', {
+            slidesPerView: "5",
+            centeredSlides: true,
+            loop: true,
+            spaceBetween: 60,
+            navigation: {
+                nextEl: '.pose_btn_next',
+                prevEl: '.pose_btn_prev',
+            },
+        });
+
+        photoPoseSwiper.on('resize', function () {
+            photoPoseSwiper.updateSize();
         })
     }
 
     featureIntro();
     featureBooth();
+    featurePhoto();
     
 }
 
