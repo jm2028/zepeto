@@ -396,6 +396,8 @@ var InitFeatured = function () {
         var btnNext = document.getElementsByClassName('js-btnChoice')[0];
         var itemWrap = document.getElementsByClassName('item_wrap');
         var chararterImg = document.getElementById('character_img');
+        var btnText = ['모자 선택하기', '가방 선택하기', '촬영 하러 가기']
+        var textCounter = 0;
 
         for (var i = 0; i < btnShopItem.length; i++) {
             btnShopItem[i].addEventListener('click', function (e) {
@@ -451,10 +453,18 @@ var InitFeatured = function () {
             currentStep.classList.remove('on');
             nextItem.classList.add('on');
             nextStep.classList.add('on');
+            btnNext.innerHTML = btnText[textCounter];
+            textCounter++;
         })
     }
 
     var featurePhoto = function () {
+        var btnPhoto = document.querySelector('.js-btnPhoto');
+        var poseWrapper = document.querySelector('.pose_slider_wrap');
+        var photoWrapper = document.querySelector('.photo_wrap')
+        var photoCharacter = document.querySelector('.js-imgCharacter');
+        var btnReset = document.querySelector('.btn_reset')
+
         var photoPoseSwiper = new Swiper('.pose_slider_wrap', {
             slidesPerView: "5",
             centeredSlides: true,
@@ -469,11 +479,27 @@ var InitFeatured = function () {
         photoPoseSwiper.on('resize', function () {
             photoPoseSwiper.updateSize();
         })
+
+        btnPhoto.addEventListener('click', function () {
+            var activeSlider = poseWrapper.querySelector('.swiper-slide-active');
+            var currentImgSrc = activeSlider.querySelector('img').src;
+            photoWrapper.classList.add('on');
+            photoCharacter.src = currentImgSrc;
+        })
+
+        btnReset.addEventListener('click', function () {
+            photoWrapper.classList.remove('on');
+        })
+        
     }
 
     featureIntro();
     featureBooth();
     featurePhoto();
+    
+}
+
+var InitTutorial = function () {
     
 }
 
