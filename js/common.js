@@ -117,6 +117,7 @@ var InitReality = function () {
                     timer = null;
     
                     logoColorChanger();
+                    animatedShow();
                 }, delay);
             }
         }
@@ -139,13 +140,30 @@ var InitReality = function () {
         });
 
         realityMainWrap.classList.add('opend');
-
         realityMainWrap.addEventListener('scroll', scrollEvent);
-
         closeBtn.addEventListener('click', closeDetail);
 
         NormalMarquee(detailMarquee);
     }
+
+    var animatedShow = function () {
+        var scrollWrap = document.querySelector('.main_wrap');
+        var $showElem = document.querySelectorAll('.js-showAni');
+        var scrollWrapHeight = scrollWrap.offsetHeight;
+
+        var scrollEventer = function (currentScroll) {
+            for(var i = 0; i < $showElem.length; i++) {
+                if (($showElem[i].getBoundingClientRect().top + $showElem[i].offsetHeight * 0.3) - scrollWrapHeight < 0) {
+                    $showElem[i].classList.add('on');
+                    console.log($showElem[i], $showElem[i].offsetTop, currentScroll)
+                }
+            }
+        }
+
+        scrollWrap.addEventListener('scroll', function () {
+            scrollEventer(scrollWrap.scrollTop + scrollWrap.offsetHeight);
+        })
+    };
 
     realitySliderWrap.addEventListener('click', function (e) {
         var detailDataSet = eventPath(e, this);
