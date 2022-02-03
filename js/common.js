@@ -150,18 +150,23 @@ var InitReality = function () {
         var scrollWrap = document.querySelector('.main_wrap');
         var $showElem = document.querySelectorAll('.js-showAni');
         var scrollWrapHeight = scrollWrap.offsetHeight;
+        var scrollTimer;
 
         var scrollEventer = function (currentScroll) {
             for(var i = 0; i < $showElem.length; i++) {
-                if (($showElem[i].getBoundingClientRect().top + $showElem[i].offsetHeight * 0.3) - scrollWrapHeight < 0) {
+                if (($showElem[i].getBoundingClientRect().top + $showElem[i].offsetHeight * 0.1) - scrollWrapHeight < 0) {
                     $showElem[i].classList.add('on');
-                    console.log($showElem[i], $showElem[i].offsetTop, currentScroll)
                 }
             }
         }
 
         scrollWrap.addEventListener('scroll', function () {
-            scrollEventer(scrollWrap.scrollTop + scrollWrap.offsetHeight);
+            if(!scrollTimer) {
+                scrollTimer = setTimeout(function () {
+                    scrollTimer = null;
+                    scrollEventer(scrollWrap.scrollTop + scrollWrap.offsetHeight);
+                }, 200)
+            }
         })
     };
 
@@ -397,6 +402,7 @@ var InitFeatured = function () {
     
         $photoBoothBtn.addEventListener('click', function () {
             $featureWrap.classList.add('booth');
+            document.querySelector('.header_zepeto_logo').classList.add('original');
         })
     
         function movingTarget (target, xpos, ypos) {
