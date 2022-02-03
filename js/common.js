@@ -128,6 +128,7 @@ var InitReality = function () {
                 realityMainWrap.removeEventListener('scroll', scrollEvent);
                 closeBtn.removeEventListener('click', closeDetail);
                 detailWrap.remove();
+                headerLogo.classList.remove('original');
                 openerCtrl = true;
             }, transitionTime);
         }
