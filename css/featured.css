@@ -59,7 +59,7 @@
 .pose_slider_wrap { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; visibility: hidden; z-index: -1; }
 .featured_wrap.photo .pose_slider_wrap { opacity: 1; transition: opacity 1s .2s; z-index: 1; visibility: visible; }
 .pose_box { display: flex; justify-content: center; align-items: flex-end; padding-bottom: 18vh; box-sizing: border-box; }
-.pose_box img { transform: scale(0.6); transition: transform .3s; transform-origin: bottom; }
+.pose_box img { width: 95%; transform: scale(0.6); transition: transform .3s; transform-origin: bottom; }
 .pose_box.swiper-slide-duplicate-active img,
 .pose_box.swiper-slide-active img { transform: scale(1); }
 .pose_slider_btn_wrap { position: absolute; bottom: 5vh; left: 50%; display: flex; align-items: center; transform: translate3d(-50%, 0, 0); z-index: 1; }
