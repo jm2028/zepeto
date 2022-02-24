@@ -46,7 +46,7 @@
 .play_thumb.mbti .thumb_bg { background: linear-gradient(#34a475, #44b987 ); }
 .play_thumb.mbti .thumb_visual .thumb_title { position: relative; padding: 15.2vh 3% 0; font-size: 140px; color: #fff; text-align: center; font-weight: bold; z-index: 10; }
 .play_thumb.mbti .thumb_visual .thumb_desc { margin-top: 8px; font-size: 24px; text-align: center; color: #fff; }
-.play_thumb.mbti .thumb_visual .mbti_girl { left: 50%; bottom : 7%; transform: translate3d(-50%, 0, 0); }
+.play_thumb.mbti .thumb_visual .mbti_girl { left: 50%; bottom : 7%; transform: translate3d(-55%, 0, 0); }
 .play_thumb.mbti .thumb_visual .mbti_estj { left: 50%; bottom: 42%; transform: translate3d(-185%, 0, 0); }
 .play_thumb.mbti .thumb_visual .mbti_infp { left: 50%; transform: translate3d(88%, 0, 0); bottom: 36%; }
 
