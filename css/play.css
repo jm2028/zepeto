@@ -45,6 +45,10 @@
 .play_thumb.friendship .thumb_visual .thumb_title { position: relative; padding: 17.3vh 3% 0; color: #fff; font-size: 60px; text-align: center; font-weight: bold; }
 .play_thumb.mbti .thumb_bg { background: linear-gradient(#34a475, #44b987 ); }
 .play_thumb.mbti .thumb_visual .thumb_title { position: relative; padding: 15.2vh 3% 0; font-size: 140px; color: #fff; text-align: center; font-weight: bold; z-index: 10; }
+.play_thumb.mbti .thumb_visual .thumb_desc { margin-top: 8px; font-size: 24px; text-align: center; color: #fff; }
+.play_thumb.mbti .thumb_visual .mbti_girl { left: 50%; bottom : 7%; transform: translate3d(-50%, 0, 0); }
+.play_thumb.mbti .thumb_visual .mbti_estj { left: 50%; bottom: 42%; transform: translate3d(-185%, 0, 0); }
+.play_thumb.mbti .thumb_visual .mbti_infp { left: 50%; transform: translate3d(88%, 0, 0); bottom: 36%; }
 
 .play_nav { position: absolute; top: 0; right: 0; display: flex; flex-direction: column; justify-content: space-between; width: 640px; height: 100%; padding: 17.2vh 60px 7vh; background: #fff; z-index: 10; box-sizing: border-box; overflow: hidden; }
 .play_nav_explain .play_title { font-size: 18px; }
