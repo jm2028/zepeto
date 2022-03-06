@@ -27,7 +27,7 @@
 .tutorial_wrap .tutorial_card_item:hover .card.back { transform: rotateY(0); }
 .tutorial_wrap .tutorial_card_item .card_subject { font-size: 18px; }
 .tutorial_wrap .tutorial_card_item .card_title { font-size: 22px; }
-.tutorial_wrap .tutorial_card_item .card_desc { font-size: 16px; }
+.tutorial_wrap .tutorial_card_item .card_desc { font-size: 16px; line-height: 1.4; }
 .tutorial_wrap .tutorial_card_item .card_link {  display: flex; justify-content: center; align-items: center; font-size: 16px; color: #fff; height: 42px; min-width: 120px; border-radius: 50px; border: 1px solid transparent; background: #5952ff; box-sizing: border-box; transition: border-color .2s, color .2s, background-color .2s; }
 .tutorial_wrap .tutorial_card_item .card_link:hover { border-color: #fff; color: #5952ff; background-color: transparent; }
 
