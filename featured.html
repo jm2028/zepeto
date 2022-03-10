@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
     <link rel="stylesheet" href="./css/reset.min.css">
     <link rel="stylesheet" href="./css/swiper.min.css">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/featured.css?v=4">
+    <link rel="stylesheet" href="./css/common.css?v=1">
+    <link rel="stylesheet" href="./css/featured.css?v=5">
 </head>
 <body>
     <header><div data-include-path="header.html" id="header"></div></header>
@@ -54,32 +54,21 @@
                     <div class="shop_logo">
                         <img src="./img/featured/featured_booth_logo.png" alt="MLB LOGO" loading="lazy">
                     </div>
+                    <div class="shop_step_dotted step_0"></div>
                     <ul class="shop_step_wrap">
                         <li class="shop_step on">
-                            <div class="step_image_wrap">
-                                <img src="img/featured/featured_booth_step_cloth.png" alt="cloth" loading="lazy">
-                            </div>
                             <p class="step_title">STEP1</p>
                             <p class="step_desc nanumSquare">의상을 선택하세요</p>
                         </li>
                         <li class="shop_step">
-                            <div class="step_image_wrap">
-                                <img src="img/featured/featured_booth_step_shose.png" alt="shose" loading="lazy">
-                            </div>
                             <p class="step_title">STEP2</p>
                             <p class="step_desc nanumSquare">신발을 선택하세요</p>
                         </li>
                         <li class="shop_step">
-                            <div class="step_image_wrap">
-                                <img src="img/featured/featured_booth_step_hat.png" alt="hat" loading="lazy">
-                            </div>
                             <p class="step_title">STEP3</p>
                             <p class="step_desc nanumSquare">모자를 선택하세요</p>
                         </li>
                         <li class="shop_step">
-                            <div class="step_image_wrap">
-                                <img src="img/featured/featured_booth_step_bag.png" alt="bag" loading="lazy">
-                            </div>
                             <p class="step_title">STEP4</p>
                             <p class="step_desc nanumSquare">가방을 선택하세요</p>
                         </li>
@@ -138,7 +127,10 @@
                             </button>
                         </div>
                     </div>
-                    <button type="button" class="btn_choice nanumSquare js-btnChoice">신발 선택하기</button>
+                    <div class="shop_btn_wrap">
+                        <button type="button" class="btn_choice nanumSquare js-btnPrev">이전</button>
+                        <button type="button" class="btn_choice nanumSquare js-btnChoice">다음</button>
+                    </div>
                 </div>
                 <div class="pose_slider_wrap">
                     <div class="swiper-wrapper">
@@ -194,7 +186,7 @@
         </div>
     </main>
 
-    <script src="./js/common.js?v=1"></script>
+    <script src="./js/common.js?v=2"></script>
     <script src="./js/swiper.min.js"></script>
     <script>
         InitFeatured();

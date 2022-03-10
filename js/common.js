@@ -103,11 +103,11 @@ var InitReality = function () {
 
             if (detailOffsetTop <= realityMainWrap.scrollTop + 50) {
                 closeBtn.classList.add('reverse');
-                headerLogo.classList.add('original');
+                headerLogo.classList.add('hide');
             }
             else {
                 closeBtn.classList.remove('reverse');
-                headerLogo.classList.remove('original');
+                headerLogo.classList.remove('hide');
             }
         }
 
@@ -412,6 +412,7 @@ var InitFeatured = function () {
     };
 
     var featureBooth = function () {
+        var itemArray = [0, 0, 0, 0];
         var itemCloth = 0;
         var itemShose = 0;
         var itemHat = 0;
@@ -419,10 +420,11 @@ var InitFeatured = function () {
         var btnShopWrap = document.getElementsByClassName('shop_item_wrap')[0];
         var btnShopItem = btnShopWrap.getElementsByClassName('js-shopItem');
         var btnNext = document.getElementsByClassName('js-btnChoice')[0];
+        var btnPrev = document.getElementsByClassName('js-btnPrev')[0];
         var itemWrap = document.getElementsByClassName('item_wrap');
         var chararterImg = document.getElementById('character_img');
         var btnText = ['모자 선택하기', '가방 선택하기', '촬영 하러 가기']
-        var textCounter = 0;
+        var currentStepNum = 0;
 
         for (var i = 0; i < btnShopItem.length; i++) {
             btnShopItem[i].addEventListener('click', function (e) {
@@ -435,24 +437,44 @@ var InitFeatured = function () {
             var $beforeActiveBtn = btnShopWrap.querySelector('.js-shopItem.on');
             
             if ($this.dataset.cloth) {
-                itemCloth = $this.dataset.cloth;
+                itemArray[0] = $this.dataset.cloth;
             }
             else if ($this.dataset.shose) {
-                itemShose = $this.dataset.shose;
+                itemArray[1] = $this.dataset.shose;
             }
             else if ($this.dataset.hat) {
-                itemHat = $this.dataset.hat;
+                itemArray[2] = $this.dataset.hat;
             }
             else if ($this.dataset.bag) {
-                itemBag = $this.dataset.bag;
+                itemArray[3] = $this.dataset.bag;
             }
 
-            chararterImg.src = './img/featured/equip/featured_booth_equip_cloth_' + itemCloth + '_' + itemShose + '_' + itemHat + '_' + itemBag + '.png';
+            chararterImg.src = './img/featured/equip/featured_booth_equip_cloth_' + itemArray[0] + '_' + itemArray[1] + '_' + itemArray[2] + '_' + itemArray[3] + '.png';
 
             if ($beforeActiveBtn != undefined) {
                 $beforeActiveBtn.classList.remove('on');
             }
             $this.classList.add('on');
+        }
+
+        function prevBtnShow () {
+            if (0 < currentStepNum) {
+                btnPrev.classList.add('on');
+            } else {
+                btnPrev.classList.remove('on');
+            }
+        }
+
+        function stepDotted (type) {
+            if (type == 'next') {
+                document.querySelector('.shop_step_dotted').classList.remove('step_' + (currentStepNum - 1));
+                document.querySelector('.shop_step_dotted').classList.add('step_' + (currentStepNum));
+            }
+            else if (type == 'prev') {
+                console.log(currentStepNum);
+                document.querySelector('.shop_step_dotted').classList.remove('step_' + (currentStepNum + 1));
+                document.querySelector('.shop_step_dotted').classList.add('step_' + (currentStepNum));
+            }
         }
 
         btnNext.addEventListener('click', function () {
@@ -478,8 +500,32 @@ var InitFeatured = function () {
             currentStep.classList.remove('on');
             nextItem.classList.add('on');
             nextStep.classList.add('on');
-            btnNext.innerHTML = btnText[textCounter];
-            textCounter++;
+            currentStepNum++;
+
+            stepDotted('next');
+            prevBtnShow();
+        })
+
+        btnPrev.addEventListener('click', function () {
+            var currentItem = btnShopWrap.querySelector('.item_wrap.on');
+            var currentStep = document.querySelector('.shop_step.on');
+            var prevItem = currentItem.previousElementSibling;
+            var prevStep = currentStep.previousElementSibling;
+
+            currentItem.classList.remove('on');
+            currentStep.classList.remove('on');
+            prevItem.classList.add('on');
+            prevStep.classList.add('on');
+
+            btnNext.innerHTML = '다음';
+
+            itemArray[currentStepNum] = 0;
+            chararterImg.src = './img/featured/equip/featured_booth_equip_cloth_' + itemArray[0] + '_' + itemArray[1] + '_' + itemArray[2] + '_' + itemArray[3] + '.png';
+
+            currentStepNum--;
+
+            stepDotted('prev');
+            prevBtnShow();
         })
     }
 

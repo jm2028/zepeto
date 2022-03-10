@@ -48,9 +48,14 @@
 .play_thumb.mbti .thumb_visual .thumb_desc { margin-top: 8px; font-size: 24px; text-align: center; color: #fff; }
 .play_thumb.mbti .thumb_visual .mbti_girl { left: 50%; bottom : 7%; transform: translate3d(-55%, 0, 0); }
 .play_thumb.mbti .thumb_visual .mbti_estj { left: 50%; bottom: 42%; transform: translate3d(-185%, 0, 0); }
-.play_thumb.mbti .thumb_visual .mbti_estj img { display: block; animation: smileHovering1 7s ease infinite alternate; }
+.play_thumb.mbti .thumb_visual .mbti_estj img { display: block; animation: mbtiHovering 3.75s ease infinite; }
 .play_thumb.mbti .thumb_visual .mbti_infp { left: 50%; transform: translate3d(88%, 0, 0); bottom: 36%; }
-.play_thumb.mbti .thumb_visual .mbti_infp img { display: block; animation: smileHovering2 6s ease infinite alternate-reverse; }
+.play_thumb.mbti .thumb_visual .mbti_infp img { display: block; animation: mbtiHovering 3.25s ease-in-out infinite; }
+@keyframes mbtiHovering {
+    0% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, 4%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
 
 .play_nav { position: absolute; top: 0; right: 0; display: flex; flex-direction: column; justify-content: space-between; width: 640px; height: 100%; padding: 17.2vh 60px 7vh; background: #fff; z-index: 10; box-sizing: border-box; overflow: hidden; }
 .play_nav_explain .play_title { font-size: 18px; }
