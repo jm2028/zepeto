@@ -89,8 +89,9 @@
 .guccivilla .reality_detail_dress { background: #685033; }
 .reality_detail_dress .dress_inner { display: flex; justify-content: space-between; width: 100%; max-width: 1200px; }
 .reality_detail_dress .dress_big_thumb { flex: 0 0 auto; width: 450px; height: 665px; margin-right: 50px; }
-.reality_detail_dress .dress_big_box { display: flex; justify-content: center; align-items: flex-end; padding-left: 11%; height: 620px; border-radius: 20px; background-color: #e0bbaa; box-sizing: border-box; overflow: hidden; }
-.guccivilla .dress_big_box img { -webkit-transform: translate3d(0, 145px, 0); transform: translate3d(0, 145px, 0); }
+.reality_detail_dress .dress_big_box { display: block; padding-left: 11%; height: 620px; border-radius: 20px; background-color: #e0bbaa; box-sizing: border-box; overflow: hidden; }
+.lotteworld .dress_big_box img { padding-left: 90px; padding-top: 77px; }
+.guccivilla .dress_big_box img { padding-top: 90px; }
 .reality_detail_dress .dress_title { font-size: 60px; font-weight: bold; color: #fff; }
 .reality_detail_dress .dress_title .fontregular { font-weight: normal; }
 .reality_detail_dress .dress_desc { margin-top: 13px; font-size: 20px; color: #fff; line-height: 1.7; }
@@ -100,7 +101,7 @@
 .reality_detail_dress .dress_small_thumb + .dress_small_thumb { margin-left: 10px; }
 .reality_detail_dress .dress_small_box { display: flex; justify-content: center; align-items: center; width: 220px; height: 330px; border-radius: 20px; }
 .reality_detail_dress .dress_small_box.blue { background-color: #9cc0ff; }
-.guccivilla .dress_small_box.blue img { -webkit-transform: translate3d(0, 12px, 0); transform: translate3d(0, 12px, 0); }
+.guccivilla .dress_small_box.blue img { padding-top: 12px; }
 .reality_detail_dress .dress_small_box.green { background-color: #b4d3b0; }
 .reality_detail_dress .dress_small_box.pink { background-color: #ffa2a2; }
 .reality_detail_dress .dress_item_desc { display: flex; justify-content: space-between; align-items: center; margin-top: 25px; padding: 0 8px; color: #fff; }
