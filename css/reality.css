@@ -138,6 +138,9 @@
 .reality_detail .detail_btn_close .close_bar:nth-child(1) { -webkit-transform: rotate(45deg); transform: rotate(45deg); }
 .reality_detail .detail_btn_close .close_bar:nth-child(2) { -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
 
+.hover_scale img { display: block; transition: transform .4s ease; }
+.hover_scale:hover img { transform: scale(1.07); }
+
 .js-showAni { opacity: 0; transform: translate3d(0, 25%, 0); transition: transform .75s cubic-bezier(0.11, 0.47, 0.29, 1), opacity .75s cubic-bezier(0.11, 0.47, 0.29, 1); }
 .js-showAni.showLeft { transform: translate3d(25%, 0, 0); }
 .js-showAni.showRight { transform: translate3d(-25%, 0, 0); }
