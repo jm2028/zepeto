@@ -493,6 +493,7 @@ var InitFeatured = function () {
             };
             if (nextStep == undefined) {
                 $featureWrap.classList.add('photo');
+                document.querySelector('.header_zepeto_logo').classList.remove('original');
                 return;
             }
 
